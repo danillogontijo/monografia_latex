@@ -162,9 +162,9 @@
 	
 	\indent\indent Primeiramente,\ gostaríamos de agradecer a Deus por ter nos colocado em um ambiente, no qual nos proporcionou toda a oportunidade de poder entrar e estar, neste momento, concluindo este curso de graduação, em uma universidade pública e referência de ensino na região centro-oeste, como é a Universidade Federal de Goiás (UFG).  Agradecemos também à família e aos amigos por sempre terem participado da nossa formação social, incentivando e acreditando em nosso potencial.
 	
-	E do lado da nossa formação profissional, gostaríamos de agradecer a todos os professores por quem tivemos a oportunidade de muito aprender, em especial, ao Prof. Ph.D Weber Martins, quem nos ajudou a despertar todo o interesse pela área de Inteligência Artificial, além também, de ter sido quem nos ensinou, durante alguns períodos como orientador, a usar o lado da ciência como premissa básica de conhecimento e aperfeiçoamento para executar todas as nossas ideias. Agradeço ao Prof. Dr. Sandrerley Pires, por ter nos ajudado a encontrar o caminho em que pudéssemos aplicar parte desse conhecimento adquirido, e assim, poder concretizar o experimento deste projeto. Por fim, agradecemos ao coordenador do curso de engenharia de computação, Prof. Dr. Carlos Galvão, que no rigor de suas atribuições e responsabilidades, mas tratando todos os fatos sempre de maneira justa e séria, ajudou a desenvolver nosso potencial além de um limite que, apesar de toda a nossa dificuldade de conciliar tempo de estudo e trabalho, em alguns momentos, chegamos a duvidar se era possível alcançar.
+	E do lado da nossa formação profissional, gostaríamos de agradecer a todos os professores por quem tivemos a oportunidade de muito aprender, em especial, ao Prof. Ph.D Weber Martins, quem nos ajudou a despertar todo o interesse pela área de Inteligência Artificial, além também, de ter sido quem nos ensinou, durante alguns períodos como orientador, a usar o lado da ciência como premissa básica de conhecimento e aperfeiçoamento para executar todas as nossas ideias. Agradeço ao Prof. Dr. Sandrerley Pires, por ter nos ajudado a encontrar o caminho para que pudéssemos aplicar parte desse conhecimento adquirido durante o curso, e assim, concretizarmos o experimento deste projeto. Por fim, agradecemos ao coordenador do curso de Engenharia de Computação, Prof. Dr. Carlos Galvão, que no rigor de suas atribuições e responsabilidades, mas tratando todos os fatos sempre de maneira justa e séria, ajudou a desenvolver nosso potencial além de um limite que, apesar de toda a nossa dificuldade de conciliar tempo de estudo e trabalho, em alguns momentos, chegamos a duvidar se era possível alcançar.
 	
-	Sentiremos falta desse contato de aprendizagem em sala de aula. Seremos eternamente gratos por toda a dedicação de vocês, e o que foi ensinado, iremos colocar em prática para ajudar a desenvolver e contribuir com a sociedade.
+	Sentiremos falta desse contato de aprendizagem em sala de aula. Seremos eternamente gratos por toda a dedicação de vocês. E o que foi ensinado, buscaremos agora colocar tudo em prática, para que possamos ajudar a desenvolver e contribuir com a nossa sociedade.
 	
 	
 	
@@ -183,7 +183,9 @@
 	\listoftables
 	
 	
-	%\lstlistoflistings
+	\lstlistoflistings
+	\addcontentsline{toc}{chapter}{Lista de Códigos de Programação}
+
 	
 	
 	
@@ -770,9 +772,6 @@
 	\indent\indent Antes, vamos já conhecer toda a estrutura de pastas e arquivos que compõem o \textit{chatterbot }do restaurante \textit{DG Food}. Vejamos a figura abaixo:
 	
 	
-	
-	
-	
 	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 1 starts here %%%%%%%%%%%%%%%%%%%%
 	
 	\begin{figure}[htb]
@@ -786,7 +785,6 @@
 	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 1 Ends here %%%%%%%%%%%%%%%%%%%%
 	
 	
-	
 	Para\ manter um nível de organização textual, resolvemos incluir nesse projeto, apenas trechos de código, sendo que o trabalho completo se encontra disponível em um repositório público, no seguinte endereço:  {\url{https://github.com/danillogontijo/bot\_dg\_food}}. 
 	
 	\subsection{Construindo o domínio}
@@ -796,23 +794,30 @@
 	\textit{Slots} são atributos que serão mantidos no contexto para serem reutilizadas em novas iterações com o usuário. Essa é uma das maneiras que o \textit{Rasa} mantem o contexto da conversa fazendo com que ela possa ser mais semelhante a conversa de um humano real. Neste projeto não teremos o uso de \textit{slots}.\\
 	O Rasa usa as \textit{intents}, as entidades e o estado interno do diálogo para selecionar a próxima ação que deve ser executada. Se for uma ação de texto, um \textit{template} correspondente é selecionado, preenchendo qualquer variável necessária, e enviando de volta esse texto como resposta. Para ações complexas pode se definir através de classes em \textit{Python}, fazendo apenas o referência da chamada do método dentro de \textit{actions} - por exemplo, - \textit{bot.ActionBuscarItensCardapio}.
 	
-	Exemplo de arquivo de domínio:
-	
-	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 2 starts here %%%%%%%%%%%%%%%%%%%%
-	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=6.27in,height=2.68in]{./media/teste2.png}
-		\end{center}
-		\caption{Modelo de um arquivo de domínio}
-	\end{figure}
-	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 2 Ends here %%%%%%%%%%%%%%%%%%%%
-	
-	
+	 \begin{lstlisting}[caption={Exemplo de arquivo de domínio},label={lst:ArquivoDominio}]
+		slots:
+			item_escolhido:
+				type: text
+				
+		intents:
+			- cumprimento
+			- sanduiche_cardapio
+			
+		entities:
+			- cardapio
+		
+		templates:
+			utter_cumprimento:
+				- 'Olá, como posso lhe ajudar?'
+				- 'Oi, estou aqui para ajudar.'
+			utter_cardapio:
+				- 'Nosso cardápio é composto por 5 tipos de sanduiches: brigitte, madonna, elvis, raul e tim maia'
+		
+		actions:
+			- utter_cumprimento
+			- utter_cardapio
+		
+	\end{lstlisting}
 	
 	
 	Em nosso projeto, o arquivo de domínio se encontra na pasta raiz, com o nome de \textit{chat\_domain.yml}.  No domínio do \textit{chatterbot} deste projeto, foi definido 5 intenções. São elas:
@@ -827,7 +832,6 @@
 		
 		\item \textbf{forma\_pagamento}: define a intenção de obter informações sobre os métodos aceitos como pagamento.
 	\end{itemize}
-	
 	
 	
 	E para determinada sentença que entrada, o \textit{bot} poderá tomar as seguintes 7 tipos diferentes de ações.
@@ -863,25 +867,39 @@
 	Todo o código necessário para executar, se encontra no arquivo \textit{online\_training.py}, presente na raiz da estrutura do projeto. E o conjunto de dados de histórias, encontra-se em \textit{data/stories.md}. Segue abaixo, o exemplo de uma história gerada.
 	
 	
+	\begin{lstlisting}[caption={Exemplo de história de conversa gerada pelo treinamento online},label={lst:ArquivoHistoria}]
+	## Generated Story 7914822348745348761
+	* cumprimento
+		- utter_cumprimento
+	* sanduiche_cardapio{"cardapio": "menu"}
+		- utter_cardapio
+		- utter_algo_mais
+	* forma_pagamento
+		- utter_forma_pagamento
+		- utter_algo_mais
+	* forma_pagamento{"forma_pagamento": "dinheiro"}
+		- utter_forma_pagamento
+		- utter_algo_mais
+		- export
+	* cumprimento
+		- utter_cumprimento
+	* sanduiche_cardapio
+		- utter_cardapio
+		- utter_algo_mais
+	* sanduiche_brigitte
+		- utter_sanduiche_brigite
+		- utter_algo_mais
+	* sanduiche_bovino
+		- utter_sanduiche_bovino
+		- utter_algo_mais
+	* forma_pagamento
+		- utter_forma_pagamento
+		- utter_algo_mais
+	
+	\end{lstlisting}
 	
 	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 3 starts here %%%%%%%%%%%%%%%%%%%%
-	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=4.26in,height=4.75in]{./media/teste3.png}
-		\end{center}
-		\caption{Exemplo de história de conversa gerada pelo treinamento \textit{online}.}
-		\label{treinamento}
-	\end{figure}
-	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 3 Ends here %%%%%%%%%%%%%%%%%%%%
-	
-	
-	
-	Percebe-se na Fig. \ref{treinamento} que dentro do contexto de uma história, abaixo de cada \textit{intent}, temos uma ação do \textit{bot}, ou seja, uma resposta utilizando as \textit{utters}.
+	Percebe-se no Código. \ref{lst:ArquivoHistoria} que dentro do contexto de uma história, abaixo de cada \textit{intent}, temos uma ação do \textit{bot}, ou seja, uma resposta utilizando as \textit{utters}.
 	
 	Criar histórias é simples, porém descrever todas as histórias e combinações geraria um esforço muito grande, e talvez nem existisse memória suficiente para acomodar esses dados. Para fazer essa generalização são utilizadas políticas (\textit{policies)}, ou seja, um padrão ou regra a ser seguido. A regra usada no projeto deste trabalho é a política \textit{Keras}. \textit{Keras} é uma API de redes neurais de alto nível, desenvolvida para execução de rápida prototipação com suporte para redes convolucionais e redes recorrentes. É possível implementar políticas diferentes ou alterar os modelos utilizados pelo \textit{Keras} dentro do \textit{Rasa}, porém tal exercício foge ao escopo deste trabalho.
 	
@@ -911,8 +929,6 @@
 		\textit{$``$Que cardápio tem aí?$"$ }
 	\end{center}
 	
-	
-	
 	Neste exemplo, para a \textit{intent} sanduiche\_cardapio, a \textit{entity} cardápio possui diversos sinônimos, como, por exemplo: menu, tipo de sanduíche, lanche, comida, opções, etc. Percebe-se que ao substituir cardápio por esses termos, a frase não perde o seu sentido, demonstra ainda a intenção do interlocutor de visualizar o cardápio.
 	
 	\subsubsection{\textit{Entity Synonyms}}
@@ -924,20 +940,37 @@
 	\indent\indent Para que o \textit{bot} possa compreender as intenções do seu interlocutor, necessariamente, precisa aprender a interpretar as suas sentenças de entrada. E para se obter esse conhecimento, necessita-se de um bom conjunto de dados que expressam bem as diversas possibilidades de frases, que fazem parte do domínio de atuação do \textit{chatterbot}. Vejamos um trecho do \textit{dataset} de treinamento que se encontra no arquivo \textit{training\_data.json} .
 	
 	
-	
-	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 4 starts here %%%%%%%%%%%%%%%%%%%%
-	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=6.27in,height=4.74in]{./media/teste4.png}
-		\end{center}
-		\caption{Trecho do arquivo de \textit{dataset} \textit{training\_data.json}}
-	\end{figure}
-	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 4 Ends here %%%%%%%%%%%%%%%%%%%%
+	\begin{lstlisting}[caption={Trecho do arquivo de \textit{dataset} \textit{training\_data.json}},label={lst:ArquivoChatito1}]
+	{
+		"rasa_nlu_data": {
+			"regex_features": [],
+			"entity_synonyms": [],
+			"common_examples": [
+				{"text": "boa tarde", "intent": "cumprimento", "entities": []},
+				{"text": "obrigado", "intent": "cumprimento", "entities": []},
+				{"text": "como vai?", "intent": "cumprimento", "entities": []},
+				{"text": "boa noite", "intent": "cumprimento", "entities": []},
+				{"text": "agradeço a atenção", "intent": "cumprimento", "entities": []},
+				{"text": "tudo bem?", "intent": "cumprimento", "entities": []},
+				{"text": "olá", "intent": "cumprimento", "entities": []},
+				{"text": "bom dia", "intent": "cumprimento", "entities": []},
+				{"text": "oi", "intent": "cumprimento", "entities": []},
+				{"text": "ola", "intent": "cumprimento", "entities": []},
+				{
+					"text": "cardapio",
+					"intent": "sanduiche_cardapio",
+					"entities": [
+						{"end": 8, "entity": "cardapio", "start": 0, "value": "cardapio"}
+					]
+				},
+				{
+					"text": "quais os tipos de cardápio que tem",
+					"intent": "sanduiche_cardapio",
+					"entities": [
+						{"end": 26, "entity": "cardapio", "start": 18, "value": "cardápio"}
+					]
+				},
+	\end{lstlisting}
 	
 	
 	Esse arquivo completo tem exatamente 8.801 linhas. É um arquivo razoavelmente grande, para que possamos definir bem todas as possíveis sentenças de entradas. E para nos ajudar nessa tarefa, usamos uma ferramenta chamada \textit{Chatito}. Vejamos a seguir.
@@ -947,57 +980,83 @@
 	
 	Com esta ferramenta, podemos nos preocupar com a criação dos exemplos e com a definição das intenções e entidades para o treinamento do \textit{bot,} sem ser necessário também entender a sintaxe usada pelo Rasa NLU, pois o \textit{Chatito} utiliza uma linguagem fluída e bem simples. Sendo que o \textit{Chatito} fica responsável pela conversão do código escrito para um \textit{dataset} com o formato esperado pelo \textit{Rasa}. Mas o melhor de tudo, é as 8.801 linhas existente no \textit{dataset} de treinamento, podem ser convertidas em algumas poucas dezenas de código. Vejamos um exemplo.
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 5 starts here %%%%%%%%%%%%%%%%%%%%
 	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=3.59in,height=1.92in]{./media/teste4.png}
-		\end{center}
-		\caption{Exemplo de código no \textit{Chatito}}
-		\label{chatito}
-	\end{figure}
+	\begin{lstlisting}[caption={Exemplo de código no \textit{Chatito}},label={lst:ArquivoChatito2}]
+			%[sanduiche_cardapio]
+				pode me enviar o seu @[cardapio]
 	
+			@[cardapio]
+				~[cardapio]
+			
+			~[cardapio]
+				cardápio
+	\end{lstlisting}
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 5 Ends here %%%%%%%%%%%%%%%%%%%%
+	Com essa simples descrição do Código \ref{lst:ArquivoChatito2}, é possível gerar o arquivo utilizado pelo \textit{Rasa} (abaixo), e nele pode-se ver que ele gerou o \textit{Common Examples }da forma esperada.
 	
-	Com essa simples descrição da Fig. \ref{chatito}, é possível gerar o arquivo utilizado pelo \textit{Rasa} (abaixo), e nele pode-se ver que ele gerou o \textit{Common Examples }da forma esperada.
+	\begin{lstlisting}[caption={Resultado da conversão do código \textit{Chatito} do Código \ref{lst:ArquivoChatito2}},label=DescriptiveLabel]
+	{
+		"rasa_nlu_data": {
+			"regex_features": [],
+			"entity_synonyms": [],
+			"common_examples": [
+				{
+					"text": "pode me enviar o seu cardápio",
+					"intent": "sanduiche_cardapio",
+					"entities": [
+						{"end": 29, "entity": "cardapio", "start": 21, "value": "cardápio"}
+					]
+				}
+			]
+		}
+	}
+	\end{lstlisting}
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 6 starts here %%%%%%%%%%%%%%%%%%%%
-	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=6.27in,height=2.53in]{./media/teste5.png}
-		\end{center}
-		\caption{Resultado da conversão do código \textit{Chatito} da Fig. \ref{chatito}.}
-	\end{figure}
-	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 6 Ends here %%%%%%%%%%%%%%%%%%%%
+
 	Da mesma forma adicionando o sinônimo $``$menu$"$  para cardápio.
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 7 starts here %%%%%%%%%%%%%%%%%%%%
+	\begin{lstlisting}[caption={Exemplo de código no \textit{Chatito} - Adicionado o sinônimo cardápio.},label={lst:DescriptiveLabel1}]
+	%[sanduiche_cardapio]
+		pode me enviar o seu @[cardapio]
 	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=4.52in,height=1.59in]{./media/teste6.png}
-		\end{center}
-		\caption{Adicionado o sinônimo cardápio.}
-		\label{fig:sinomimo}
-	\end{figure}
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 7 Ends here %%%%%%%%%%%%%%%%%%%%
+	@[cardapio]
+		~[cardapio]
+	
+	~[cardapio]
+		cardápio
+		menu
+		
+	\end{lstlisting}
+	
 	
 	Temos o seguinte código gerado.
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 8 starts here %%%%%%%%%%%%%%%%%%%%
 	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=6.14in,height=3.6in]{./media/teste7.png}
-		\end{center}
-		\caption{Resultado da conversão do código \textit{Chatito} da Fig. \ref{fig:sinomimo}.}
-	\end{figure}
+	\begin{lstlisting}[caption={Resultado da conversão do código \textit{Chatito} do Código \ref{lst:DescriptiveLabel1}},label={lst:DescriptiveLabel2}]
+	{
+		"rasa_nlu_data": {
+			"regex_features": [],
+			"entity_synonyms": [],
+			"common_examples": [
+			{
+					"text": "pode me enviar o seu cardápio",
+					"intent": "sanduiche_cardapio",
+					"entities": [
+						{"end": 29, "entity": "cardapio", "start": 21, "value": "cardápio"}
+					]
+				},
+				{
+					"text": "pode me enviar o seu menu",
+					"intent": "sanduiche_cardapio",
+					"entities": [
+						{"end": 25, "entity": "cardapio", "start": 21, "value": "menu"}
+					]
+				}
+			]
+		}
+	}
+	\end{lstlisting}
 	
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 8 Ends here %%%%%%%%%%%%%%%%%%%%
 	O arquivo completo do \textit{chatito} usado para o projeto, encontra-se em \textit{chatito/chatito.cht}.
 	
 	\subsection{Executando o treinamento}
