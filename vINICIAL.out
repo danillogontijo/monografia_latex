@@ -16,13 +16,13 @@
 \BOOKMARK [1][-]{section.2.5}{Dificuldades no Processamento de Linguagem}{chapter.2}% 16
 \BOOKMARK [1][-]{section.2.6}{Exemplos de aplica\347\365es de PLN}{chapter.2}% 17
 \BOOKMARK [1][-]{section.2.7}{Natural Language Understanding \(NLU\)}{chapter.2}% 18
-\BOOKMARK [0][-]{chapter.3}{Trabalhos Correlatos\)}{}% 19
+\BOOKMARK [0][-]{chapter.3}{Trabalhos Correlatos}{}% 19
 \BOOKMARK [1][-]{section.3.1}{ELIZA}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.1.1}{Funcionamento ELIZA}{section.3.1}% 21
 \BOOKMARK [1][-]{section.3.2}{Julia}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.3}{ALICE}{chapter.3}% 23
 \BOOKMARK [1][-]{section.3.4}{Chatterbot iFood}{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{Abordagem}{}% 25
+\BOOKMARK [0][-]{chapter.4}{Tecnologias utilizads}{}% 25
 \BOOKMARK [1][-]{section.4.1}{O que \351 um Framework?}{chapter.4}% 26
 \BOOKMARK [1][-]{section.4.2}{O que \351 Open Source?}{chapter.4}% 27
 \BOOKMARK [1][-]{section.4.3}{Linguagem de programa\347\343o Python}{chapter.4}% 28
@@ -34,21 +34,22 @@
 \BOOKMARK [2][-]{subsection.4.5.2}{Rasa Core}{section.4.5}% 34
 \BOOKMARK [3][-]{subsubsection.4.5.2.1}{Rasa Core sem Python}{subsection.4.5.2}% 35
 \BOOKMARK [3][-]{subsubsection.4.5.2.2}{Integra\347\343o com plataformas de mensagens}{subsection.4.5.2}% 36
-\BOOKMARK [1][-]{section.4.6}{Conhecendo o problema}{chapter.4}% 37
-\BOOKMARK [0][-]{chapter.5}{Testes e Resultados}{}% 38
-\BOOKMARK [1][-]{section.5.1}{Documenta\347\343o oficial}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Instala\347\343o}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.3}{Implementa\347\343o}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.3.1}{Construindo o dom\355nio}{section.5.3}% 42
-\BOOKMARK [2][-]{subsection.5.3.2}{Definindo as Hist\363rias}{section.5.3}% 43
-\BOOKMARK [2][-]{subsection.5.3.3}{NLU Model: treinando o bot}{section.5.3}% 44
-\BOOKMARK [3][-]{subsubsection.5.3.3.1}{Common Examples}{subsection.5.3.3}% 45
-\BOOKMARK [3][-]{subsubsection.5.3.3.2}{Entity Synonyms}{subsection.5.3.3}% 46
-\BOOKMARK [3][-]{subsubsection.5.3.3.3}{Entity Synonyms}{subsection.5.3.3}% 47
-\BOOKMARK [2][-]{subsection.5.3.4}{NLU Dataset: conjunto de dados para treinar o bot}{section.5.3}% 48
-\BOOKMARK [3][-]{subsubsection.5.3.4.1}{Chatito}{subsection.5.3.4}% 49
-\BOOKMARK [2][-]{subsection.5.3.5}{Executando o treinamento}{section.5.3}% 50
-\BOOKMARK [2][-]{subsection.5.3.6}{Integrando as partes}{section.5.3}% 51
-\BOOKMARK [2][-]{subsection.5.3.7}{Integrando com o Facebook Messenger}{section.5.3}% 52
-\BOOKMARK [0][-]{chapter.6}{Conclus\343o}{}% 53
-\BOOKMARK [0][-]{chapter*.19}{Refer\352ncias Bibliogr\341ficas}{}% 54
+\BOOKMARK [0][-]{chapter.5}{Testes e Resultados}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Conhecendo o problema}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Documenta\347\343o oficial}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{Instala\347\343o}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.4}{Implementa\347\343o}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.4.1}{Construindo o dom\355nio}{section.5.4}% 42
+\BOOKMARK [2][-]{subsection.5.4.2}{Definindo as Hist\363rias}{section.5.4}% 43
+\BOOKMARK [2][-]{subsection.5.4.3}{NLU Model: treinando o bot}{section.5.4}% 44
+\BOOKMARK [3][-]{subsubsection.5.4.3.1}{Common Examples}{subsection.5.4.3}% 45
+\BOOKMARK [3][-]{subsubsection.5.4.3.2}{Entity Synonyms}{subsection.5.4.3}% 46
+\BOOKMARK [3][-]{subsubsection.5.4.3.3}{Entity Synonyms}{subsection.5.4.3}% 47
+\BOOKMARK [2][-]{subsection.5.4.4}{NLU Dataset: conjunto de dados para treinar o bot}{section.5.4}% 48
+\BOOKMARK [3][-]{subsubsection.5.4.4.1}{Chatito}{subsection.5.4.4}% 49
+\BOOKMARK [2][-]{subsection.5.4.5}{Executando o treinamento}{section.5.4}% 50
+\BOOKMARK [2][-]{subsection.5.4.6}{Integrando as partes}{section.5.4}% 51
+\BOOKMARK [2][-]{subsection.5.4.7}{Integrando com o Facebook Messenger}{section.5.4}% 52
+\BOOKMARK [0][-]{chapter.6}{Considera\347\365es Finais}{}% 53
+\BOOKMARK [0][-]{chapter.7}{Conclus\343o}{}% 54
+\BOOKMARK [0][-]{chapter*.18}{Refer\352ncias Bibliogr\341ficas}{}% 55

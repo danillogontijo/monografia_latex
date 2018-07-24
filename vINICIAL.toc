@@ -17,13 +17,13 @@
 \contentsline {section}{\numberline {2.5}Dificuldades no Processamento de Linguagem}{21}{section.2.5}
 \contentsline {section}{\numberline {2.6}Exemplos de aplica\c c\~oes de PLN}{22}{section.2.6}
 \contentsline {section}{\numberline {2.7}\textit {Natural Language Understanding} (NLU)}{23}{section.2.7}
-\contentsline {chapter}{\numberline {3}\textit {Trabalhos Correlatos)}}{25}{chapter.3}
+\contentsline {chapter}{\numberline {3}Trabalhos Correlatos}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}ELIZA}{25}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Funcionamento ELIZA}{25}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Julia}{26}{section.3.2}
 \contentsline {section}{\numberline {3.3}ALICE}{26}{section.3.3}
 \contentsline {section}{\numberline {3.4}\textit {Chatterbot} iFood}{27}{section.3.4}
-\contentsline {chapter}{\numberline {4}Abordagem}{28}{chapter.4}
+\contentsline {chapter}{\numberline {4}Tecnologias utilizads}{28}{chapter.4}
 \contentsline {section}{\numberline {4.1}O que \'e um \textit {Framework}?}{28}{section.4.1}
 \contentsline {section}{\numberline {4.2}O que \'e \textit {Open Source}?}{30}{section.4.2}
 \contentsline {section}{\numberline {4.3}Linguagem de programa\c c\~ao \textit {Python}}{31}{section.4.3}
@@ -35,21 +35,22 @@
 \contentsline {subsection}{\numberline {4.5.2}Rasa Core}{37}{subsection.4.5.2}
 \contentsline {subsubsection}{\numberline {4.5.2.1}Rasa Core sem \textit {Python}}{38}{subsubsection.4.5.2.1}
 \contentsline {subsubsection}{\numberline {4.5.2.2}Integra\c c\~ao com plataformas de mensagens}{38}{subsubsection.4.5.2.2}
-\contentsline {section}{\numberline {4.6}Conhecendo o problema}{40}{section.4.6}
-\contentsline {chapter}{\numberline {5}Testes e Resultados}{42}{chapter.5}
-\contentsline {section}{\numberline {5.1}Documenta\c c\~ao oficial}{42}{section.5.1}
-\contentsline {section}{\numberline {5.2}Instala\c c\~ao}{43}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementa\c c\~ao}{45}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Construindo o dom\IeC {\'\i }nio}{45}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Definindo as Hist\'orias}{48}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}NLU Model: treinando o \textit {bot}}{50}{subsection.5.3.3}
-\contentsline {subsubsection}{\numberline {5.3.3.1}\textit {Common Examples}}{50}{subsubsection.5.3.3.1}
-\contentsline {subsubsection}{\numberline {5.3.3.2}\textit {Entity Synonyms}}{51}{subsubsection.5.3.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3.3}\textit {Entity Synonyms}}{51}{subsubsection.5.3.3.3}
-\contentsline {subsection}{\numberline {5.3.4}NLU \textit {Dataset}: conjunto de dados para treinar o \textit {bot}}{52}{subsection.5.3.4}
-\contentsline {subsubsection}{\numberline {5.3.4.1}Chatito}{53}{subsubsection.5.3.4.1}
-\contentsline {subsection}{\numberline {5.3.5}Executando o treinamento}{55}{subsection.5.3.5}
-\contentsline {subsection}{\numberline {5.3.6}Integrando as partes}{57}{subsection.5.3.6}
-\contentsline {subsection}{\numberline {5.3.7}Integrando com o \textit {Facebook Messenger}}{58}{subsection.5.3.7}
-\contentsline {chapter}{\numberline {6}Conclus\~ao}{60}{chapter.6}
-\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{63}{chapter*.19}
+\contentsline {chapter}{\numberline {5}Testes e Resultados}{40}{chapter.5}
+\contentsline {section}{\numberline {5.1}Conhecendo o problema}{40}{section.5.1}
+\contentsline {section}{\numberline {5.2}Documenta\c c\~ao oficial}{42}{section.5.2}
+\contentsline {section}{\numberline {5.3}Instala\c c\~ao}{43}{section.5.3}
+\contentsline {section}{\numberline {5.4}Implementa\c c\~ao}{45}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Construindo o dom\IeC {\'\i }nio}{46}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Definindo as Hist\'orias}{49}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}NLU Model: treinando o \textit {bot}}{51}{subsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.3.1}\textit {Common Examples}}{51}{subsubsection.5.4.3.1}
+\contentsline {subsubsection}{\numberline {5.4.3.2}\textit {Entity Synonyms}}{51}{subsubsection.5.4.3.2}
+\contentsline {subsubsection}{\numberline {5.4.3.3}\textit {Entity Synonyms}}{52}{subsubsection.5.4.3.3}
+\contentsline {subsection}{\numberline {5.4.4}NLU \textit {Dataset}: conjunto de dados para treinar o \textit {bot}}{52}{subsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.1}Chatito}{54}{subsubsection.5.4.4.1}
+\contentsline {subsection}{\numberline {5.4.5}Executando o treinamento}{56}{subsection.5.4.5}
+\contentsline {subsection}{\numberline {5.4.6}Integrando as partes}{58}{subsection.5.4.6}
+\contentsline {subsection}{\numberline {5.4.7}Integrando com o \textit {Facebook Messenger}}{60}{subsection.5.4.7}
+\contentsline {chapter}{\numberline {6}Considera\c c\~oes Finais}{62}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclus\~ao}{65}{chapter.7}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{67}{chapter*.18}

@@ -144,14 +144,15 @@
 		
 	\end{dedicatoria}
 	%--------Digite aqui o seu resumo em Português--------------
-	\resumo{Resumo}Devido a evolução da inteligência computacional nos últimos anos, consequentemente o avanço prático e comercial dos \textit{chatterbots}, vamos propor neste trabalho, a construção de um atendente virtual que irá auxiliar nos pedidos em um restaurante, substituindo portanto, interações humanas nas conversas. Para alcançar esse objetivo, usaremos como ferramenta base de desenvolvimento, um \textit{framework }chamado \textit{Rasa} que irá abstrair algumas complexidades da inteligência computacional.
+	\resumo{Resumo}Os indícios da prática da atividade de \textit{delivery} de comida remontam-se do período romano. Atualmente, essa atividade é mundialmente consolidada e tende a se tornar mais forte à medida que as pessoas forem se modelando à sociedade de consumo. Mais clientes, mais esforço de atendimento às demandas deles, surgindo assim a necessidade de tecnologias que possam agilizar o processo de atendimento a clientes em busca de comida para entrega. Este trabalho tem por objetivo demonstrar a construção de um \textit{chatterbot} que auxilia os clientes a estruturarem melhor os seus pedidos de \textit{delivery}. A porção do atendimento a ser atendida é a de orientação do cliente para realização de sua escolha, que é a parte mais demorada do processo de atendimento. Neste trabalho, primeiramente estuda-se os conceitos de Processamento de Linguagem Natural (PLN) e linguística, que são premissas de conhecimento para compreendermos o seu funcionamento. Estuda-se também o \textit{framework} \textit{Rasa} para a construção do \textit{chatterbot}. O objetivo é entender as tecnologias utilizadas, sejam elas externas ou que façam parte do próprio \textit{framework Rasa}, avaliando o nível de qualidade da sua documentação oficial. O processo de estudo, projeto e codificação de um \textit{chatterbot} é realizado a fim de sedimentar e experimentar o conhecimento adquirido na fase de estudo. Um subconjunto de produtos vendidos em um estabelecimento de entrega de sanduíches é utilizado para criar o contexto de atuação do \textit{chatterbot}. A implementação feita no \textit{framework} do \textit{Rasa} é integrada ao \textit{Facebook Messenger} com o objetivo de dar uma interface natural e funcional ao produto criado. Os resultados obtidos demonstram que as tecnologias utilizadas são suficientes para a implementação proposta e que o produto é realmente capaz de prover adequado atendimento aos clientes do estabelecimento automatizado.   Nas considerações finais, relaciona-se todas as dificuldades encontradas no decorrer deste trabalho, além de assegurar que os objetivos do trabalho foram atingidos.
 	
 	
-	\noindent Palavras-chaves: \emph{Chatterbots}, PLN, NLU, Rasa, Chatito, spaCy.
+	
+	\noindent Palavras-chaves: \emph{Chatterbots}, PLN, NLU, Rasa, Chatito, spaCy, framework, delivery.
 	%-----------Digite aqui o seu resumo em Inglês--------------	
-	\resumo{Abstract} We propose in this paper due to the evolution of computational intelligence in recent years and consequently practical and commercial improvements of chatterbots, the development of a virtual assistant that will assist people in placing orders in restaurants, trying to substitute the need for human interactions in conversations. To accomplish this objective, we will use a development framework as basis, that framework is Rasa, and it will help abstracting some of the complexities related to computational intelligence.
+	\resumo{Abstract} The evidence of the practice of food delivery goes back to the Roman period. Nowadays, this activity is globally consolidated and tends to become stronger as people shape themselves into the consumer society. More customers, more effort to meet their needs, thus arising the need for technologies that can speed up the process of  delivery food. This work aims to demonstrate the construction of a chatterbot that helps clients to better structure their delivery food order. The portion of the service to be served is the orientation of the client to make his choice, which is the most time consuming part of the service process. In this work, we first study the concepts of Natural Language Processing (NLP) and linguistics, which are knowledge premises to understand its operation. We also study the framework Rasa for the construction of chatterbot. The objective is to understand the technologies used, be they external or that are part of the Rasa framework itself, evaluating the level of quality of its official documentation. The process of studying, designing and coding a chatterbot is carried out in order to sediment and test the knowledge acquired during the study phase. A subset of products sold at a sandwich delivery establishment is used to create the chatterbot's working context. The implementation made in the Rasa Framework is integrated with Facebook Messenger with the objective of giving a natural and functional interface to the product created. The results show that the technologies used are sufficient for the proposed implementation and that the product is actually able to provide adequate service to the clients of the automated establishment. In the final considerations, all the difficulties encountered in the course of this work are related, besides ensuring that the objectives of the work have been achieved.
 	
-	\noindent  Keywords: \textit{Chatterbots}, PLN, NLU, Rasa, Chatito, spaCy.
+	\noindent  Keywords: \textit{Chatterbots}, PLN, NLU, Rasa, Chatito, spaCy, framework, delivery.
 	%-----------Ou digite aqui o seu resumo em Frances----------
 	%\resumo{Résumé} C'est un modèle de la monographie dans \LaTeX et
 	%5utilise la classe monografia.cls, avec le but de aider dans le
@@ -207,7 +208,7 @@
 	SO \hspace{27mm} Sistema Operacional \\
 	PLN \hspace{24mm} Processamento de Linguagem Natural \\
 	PyPI \hspace{24mm} Python Package Index\\
-	
+	MVP \hspace{24mm} Produto Mínimo Viável\\
 	
 	\addcontentsline{toc}{chapter}{Lista de Abreviaturas e Siglas}
 	
@@ -216,7 +217,7 @@
 	\pagestyle{ruledheader}
 	\chapter{INTRODUÇÃO}
 	
-	\indent\indent \textit{Delivery}. Um termo relativamente novo, aqui no Brasil e no mundo, se considerarmos a história humana, mas um conceito bem antigo: a entrega de comida. A opção de receber refeições em casa ou em qualquer outro local existe há muito tempo\cite{delivery}.
+	\indent\indent Delivery de comida ou do inglês \textit{takeout food}. Um termo relativamente novo, aqui no Brasil e no mundo, se considerarmos a história humana, mas um conceito bem antigo: a entrega de comida. A opção de receber refeições em casa ou em qualquer outro local existe há muito tempo\cite{delivery}.
 	
 	
 	
@@ -225,17 +226,10 @@
 	Na Roma Antiga, por exemplo, tem-se conhecimento de um local que fornecia comida preparada e pronta para consumo ao seus clientes, conhecidos como \textit{Termopólio }(Kleberg, 1957, p. 24-25). Mesmo não havendo, ainda, o sistema de entregas, este tipo de estabelecimento, um dos precursores do famoso \textit{fast-food}, já criava o hábito do \textit{take out food}, também conhecido como comida $``$para viagem$"$ , o que já permitia a criação de um modelo de negócio de armazenagem e entrega de comida.
 	
 	
+	Mas o modelo atual do sistema de \textit{delivery }que conhecemos, iniciou-se no período pós-Segunda Guerra Mundial. No início da década de 50, e com o avanço de tecnologias como a TV e telefone, a burguesia americana descobriu então, as primeiras propagandas oferecendo o serviço de $``$entrega em casa$"$  (Emelyn Rude, 2016). E em diante, temos uma rápida expansão desse modelo de negócio, chegando ao Brasil em meados da década de 80 (Xavier, 2015), com a vinda dos restaurantes de \textit{fast-food}, e que, segundo a Associação Brasileira de Bares e Restaurantes - Abrasel -, em 2017 o \textit{delivery} de comida faturou mais de R$\$$  10 bilhões\cite{10bi}, colocando o Brasil entre um dos maiores mercado deste segmento, de acordo com o estudo feito pela \textit{EAE Business School}\cite{foodSpain}. 
 	
 	
-	
-	Mas o modelo atual do sistema de \textit{delivery }que conhecemos, iniciou-se no período pós-Segunda Guerra Mundial. No início da década de 50, e com o avanço de tecnologias como a TV e telefone, a burguesia americana descobriu então, as primeiras propagandas oferecendo o serviço de $``$entrega em casa$"$  (Emelyn Rude, 2016). E em diante, temos uma rápida expansão desse modelo de negócio, chegando ao Brasil em meados da década de 80(Xavier, 2015), com a vinda dos restaurantes de \textit{fast-food}, e que, segundo a Associação Brasileira de Bares e Restaurantes - Abrasel -, em 2017 o \textit{delivery} de comida faturou mais de R$\$$  10 bilhões\cite{10bi}, colocando o Brasil entre um dos maiores mercado deste segmento, de acordo com o estudo feito pela \textit{EAE Business School}\cite{foodSpain}. 
-	
-	
-	
-	
-	
-	Diante deste mercado tão grande e que envolve tanto dinheiro, tem-se aproveitado dos avanços tecnológicos para continuar a crescer. Dos anos 50 para cá, criaram-se diversas facilidades tecnológicas que otimizam recursos e agilizam a realização de pedidos pelos clientes. Dentre estas tecnologias está o foco deste projeto: \textit{chatterbot}.\\
-	
+	Diante deste mercado tão grande e que envolve tanto dinheiro, tem-se aproveitado dos avanços tecnológicos para continuar a crescer. Dos anos 50 para cá, criaram-se diversas facilidades tecnológicas que otimizam recursos e agilizam a realização de pedidos pelos clientes. Em 1966 surgiu o primeiro \textit{chatterbot}, ELIZA (Weizenbaum, 1966). E de maneira mais contemporânea e com o advento da internet encontramos chatterbots sendo usados no serviço de \textit{delivery}, foco deste projeto.
 	
 	
 	
@@ -315,9 +309,9 @@
 	O objetivo do PLN é fornecer aos computadores a capacidade de entender e compor textos. $``$Entender$"$  um texto significa reconhecer o contexto, fazer análise sintática, semântica, léxica e morfológica, criar resumos, extrair informação, interpretar os sentidos, analisar sentimentos e até aprender conceitos com os textos processados. 
 	
 	\subsection{Breve Histórico}
-	PLN vem sendo estudada e aplicada em casos que é necessário utilizar comunicação com Linguagem Natural.
+	\indent\indent PLN vem sendo estudada e aplicada em casos que é necessário utilizar comunicação com Linguagem Natural.
 	
-	Desde os anos 40, técnicas estão sendo criadas na tentativa de tornar a comunicação entre seres humanos e computadores mais fluida. \textit{Machine Translation} (MT) \textit{ }foi a primeira aplicação computacional relacionado a linguagem natural. É amplamente aceito que foi Weaver em um memorando em 1949 que sugeriu a idéia do MT, essa idéia acabou consistia em um utilizar técnicas de criptografia e teoria da informação para para fazer tradução de línguas. A idéia original era simplista e consistia em fazer o uso de um dicionário fazendo a correspondência entre palavras e levava em consideração somente as diferenças na ordenação possível das palavras. (Liddy, 2001)
+	Desde os anos 40, técnicas estão sendo criadas na tentativa de tornar a comunicação entre seres humanos e computadores mais fluida. \textit{Machine Translation} (MT) \textit{ }foi a primeira aplicação computacional relacionado a linguagem natural. É amplamente aceito que foi Weaver em um memorando em 1949 que sugeriu a idéia do MT, essa idéia acabou consistia em um utilizar técnicas de criptografia e teoria da informação para para fazer tradução de línguas. A idéia original era simplista e consistia em fazer o uso de um dicionário fazendo a correspondência entre palavras e levava em consideração somente as diferenças na ordenação possível das palavras (Liddy, 2001).
 	
 	Nos anos 50 e começo dos anos 60, ideias sobre gramáticas formais começaram a surgir em linguísticas e algoritmos para interpretar linguagem natural começaram a ser desenvolvidos ao mesmo tempo que algoritmos estavam sendo desenvolvidos para interpretar linguagens de programação, porém a maiorias dos linguistas não se interessava por PLN e por isso somente a abordagem de Chomsky foi desenvolvida e acabou sendo utilizada de forma indireta no desenvolvimento do PLN.(Copestake, 2004)
 	
@@ -375,12 +369,11 @@
 	
 	Um sistema de NLU verdadeiro e completo seria capaz de através de uma entrada de texto, traduzi-lo para outro idioma, responder perguntas relacionadas ao conteúdo do texto, e fazer inferências sobre o texto.(LIDDY et al., 2001)
 	
-	\chapter{\textit{Trabalhos Correlatos)}}  
-	\indent\indent Como a maioria das invenções os \textit{chatterbots} foram criados para facilitar tarefas que normalmente exigiria uma pessoa para serem realizadas.
+	\chapter{Trabalhos Correlatos}  
+	\indent\indent Como a maioria das invenções os \textit{chatterbots} foram criados para facilitar tarefas que normalmente exigiria uma pessoa para serem realizadas. O termo \textit{chatterbot }em si foi criado por Michael Mauldin (Deryugina, 2010) criador do primeiro Verbot (Verbal-Robot), Julia.\  
 	
-	O termo \textit{chatterbot }em si foi criado por Michael Mauldin(Deryugina, 2010) criador do primeiro Verbot(Verbal-Robot), Julia.\  
 	\section{ELIZA}
-	\indent\indent ELIZA foi o primeiro \textit{chatterbot} que foi idealizada em 1966 por Joseph Weizenbaum, professor no \textit{Massachussets Institute of Technology}, como um Processador de linguagem natural (PLN)[Weizenbaum, 1966],. Foi desenvolvido utilizando a idéia de casamento de padrões. Seu potencial foi demonstrado através de entrevistas em que ELIZA imitava respostas de um terapeuta utilizando uma abordagem centrada na pessoa. O ELIZA respondia a cada frase do usuário com uma pergunta, fazendo assim com que o usuário guiasse a conversa.
+	\indent\indent ELIZA foi o primeiro \textit{chatterbot} que foi idealizada em 1966 por Joseph Weizenbaum, professor no \textit{Massachussets Institute of Technology}, como um Processador de linguagem natural (PLN) (Weizenbaum, 1966),. Foi desenvolvido utilizando a idéia de casamento de padrões. Seu potencial foi demonstrado através de entrevistas em que ELIZA imitava respostas de um terapeuta utilizando uma abordagem centrada na pessoa. O ELIZA respondia a cada frase do usuário com uma pergunta, fazendo assim com que o usuário guiasse a conversa.
 	
 	\textit{Chatterbots }como ELIZA, fazem o uso de técnicas de casamento de padrões, efetuando uma busca sequencial utilizando palavras-chave a procura de respostas pré definidas.
 	
@@ -388,7 +381,7 @@
 	\subsection{Funcionamento ELIZA}
 	\indent\indent ELIZA começa identificando as palavras mais importantes na sentença, aplica uma regra de modificação que contextualiza as palavras, por exemplo $``$você$"$  seguindo de $``$é$"$  se classifica como afirmação. Em casos que a sentença não se encontra em nenhuma regra é retornada uma resposta já utilizada ou uma resposta completamente livre de contexto
 	\section{Julia}
-	\indent\indent JULIA[Mauldin, 1994] foi o \textit{chatterbot }criado por Michael Mauldin na Carnegie Mellon University e tinha a função de auxiliar usuários a participar de jogos feitos para terminais somente com interface de texto.
+	\indent\indent JULIA (Mauldin, 1994) foi o \textit{chatterbot }criado por Michael Mauldin na Carnegie Mellon University e tinha a função de auxiliar usuários a participar de jogos feitos para terminais somente com interface de texto.
 	
 	JULIA atuava como um personagem cujo propósito era o de auxiliar outros usuários em um ambiente virtual, conhecido como TinyMUD (Multi-User Dungeons). JULIA ajudava usuários nesse mundo virtual mapeando cavernas e enviando mensagens.
 	
@@ -397,18 +390,18 @@
 	JULIA possui uma curiosidade, ele foi implementado para simular levemente alteração de humor, e possui alguns objetivos definidos para si, o que faz com que seja capaz de avaliar se esta sendo útil naquele ambiente que está inserido.
 	
 	\section{ALICE}
-	\indent\indent ALICE(\textit{Artificial Linguistic Internet Computer Entity})[Wallace,\ 2009], é um dos  \textit{chatterbots }que veio em conjunto com a criação da AIML(\textit{Artificial Intelligence Markup Language}), que é uma linguagem de marcação baseado em xml. 
+	\indent\indent ALICE (\textit{Artificial Linguistic Internet Computer Entity}) (Wallace,\ 2009), é um dos  \textit{chatterbots }que veio em conjunto com a criação da AIML(\textit{Artificial Intelligence Markup Language}), que é uma linguagem de marcação baseado em xml. 
 	
 	O comportamento de ALICE está relacionado a categorías definidas por padrões, pergunta-resposta. Cada categoria possui um padrão que é o estímulo e uma resposta \textit{template. }A cada frase é feita uma pesquisa buscando a categoria, e assim uma resposta correspondente é determinada pelo estímulo da entrada. ALICE faz o uso de aprendizado supervisionado em que um responsável pode inserir novos padrões, já que não há um padrão específico. 
 	
-	O grande avanço que ALICE nos trouxe foi o \textit{AIML }que teve seus interpretadores implementados em diversas linguagens, além de ter gerado linguagens derivadas que utilizando-se de princípios semelhantes expandiram e melhoraram seu desempenho. Um exemplo dessa linguagem é o iAIML, que consiste em um mecanismo desenvolvido para tratamento de intenções em \textit{Chatterbots }baseado na Teoria de Análises da Conversação propondo uma análise tanto no nível local quanto no global.[Neves e Barros, 2005]
+	O grande avanço que ALICE nos trouxe foi o \textit{AIML }que teve seus interpretadores implementados em diversas linguagens, além de ter gerado linguagens derivadas que utilizando-se de princípios semelhantes expandiram e melhoraram seu desempenho. Um exemplo dessa linguagem é o iAIML, que consiste em um mecanismo desenvolvido para tratamento de intenções em \textit{Chatterbots }baseado na Teoria de Análises da Conversação propondo uma análise tanto no nível local quanto no global. (Neves e Barros, 2005)
 	
 	\section{\textit{Chatterbot} iFood}
 	\indent\indent O iFood empresa de \textit{Delivery Online} possui um \textit{chatterbot} chamado de iFood Guru feito em cima do \textit{Messenger} do \textit{Facebook}. Com esse \textit{bot} é possível fazer pedidos de pizzas e bebidas. 
-	O iFood Guru um \textit{chatterbot} muito simples que baseado no endereço informado, mostra os sabores de pizza disponíveis. Escolhido o sabor da pizza são mostrados os restaurantes abertos que atendem o endereço e que possuem aquele sabor. Nessa tela são mostradas as logomarcas e notas de avaliação do restaurante. Escolhido o restaurante o valor total com taxa de entrega é informado ao cliente que pode confirmar ou não aquele pedido. [Lima, 20017]
+	O iFood Guru um \textit{chatterbot} muito simples que baseado no endereço informado, mostra os sabores de pizza disponíveis. Escolhido o sabor da pizza são mostrados os restaurantes abertos que atendem o endereço e que possuem aquele sabor. Nessa tela são mostradas as logomarcas e notas de avaliação do restaurante. Escolhido o restaurante o valor total com taxa de entrega é informado ao cliente que pode confirmar ou não aquele pedido. (Lima, 20017)
 	Toda essa interação é feita utilizando diálogos textual e menus interativos que dão opções para o usuário escolher o que facilita tanto no desenvolvimento do \textit{bot} quando no entendimento do usuário.
 	
-	\chapter{Abordagem}
+	\chapter{Tecnologias utilizads}
 	\indent\indent  Neste tópico, explicaremos o planejamento e a arquitetura da solução. Abordando também conceitos de tecnologias e ferramentas utilizadas para o desenvolvimento do \textit{chatterbot }proposto neste projeto. Sendo que uma das principais ferramentas que iremos utilizar, será o \textit{framework} Rasa. Mas, antes de aprofundarmos mais sobre essa ferramenta, que será usada para modelar e desenvolver nosso \textit{chatterbot}, vamos abordar um pouco sobre o que é um \textit{framework}.
 	\section{O que é um \textit{Framework}?}
 	\indent\indent \textit{Frameworks} são técnicas de reutilização orientada a objetos. Compartilhando com diversas características com técnicas de reutilização em geral, e com técnicas de reutilização orientadas a objeto em particular. (Ralph E. Johnson. Framework, Components, Patterns. 1997)
@@ -428,7 +421,7 @@
 	
 	Voltando ao desafio desse projeto, o desenvolvimento de um assistente virtual para auxiliar nos pedido de \textit{delivery}, temos, então, um problema em domínio específico: o \textit{chatterbot}. E, portanto, por todas as vantagens explicadas, esse é o motivo de escolhermos trabalhar no projeto usando um \textit{framework}. A escolha do Rasa em específico, se baseou primeiramente, em buscar uma ferramenta \textit{open source}, ou seja, de código aberto. Analisamos também, sobre quais tecnologias foram utilizadas para construir a ferramenta, e a linguagem de programação utilizada para se trabalhar com ela. Explicaremos mais a seguir.
 	\section{O que é \textit{Open Source}?}
-	\indent\indent A\ definição de \textit{Open Source}, ou código aberto, em tradução livre, é um termo baseado na Definição Debian de \textit{Software} Livre (DFSG)  \cite{oba1}. Foi esboçado primeiramente por Bruce Perens, sendo editado e aprovado como política formal pela comunidade de desenvolvedores Debian em 1997. Em fevereiro de 1998, foi revisado pela DFSG e removido as referências específicas do Debian, ganhando a denominação de $``$\textit{The Open Source Definition}$"$ , e adotado pela \textit{Open Source Initiative} (OSI) durante o seu lançamento nesta mesma data \cite{oba2}.
+	\indent\indent A\ definição de \textit{Open Source}, ou código aberto, em tradução livre, é um termo baseado na Definição Debian de \textit{Software} Livre (DFSG)\cite{oba1}. Foi esboçado primeiramente por Bruce Perens, sendo editado e aprovado como política formal pela comunidade de desenvolvedores Debian em 1997. Em fevereiro de 1998, foi revisado pela DFSG e removido as referências específicas do Debian, ganhando a denominação de $``$\textit{The Open Source Definition}$"$ , e adotado pela \textit{Open Source Initiative} (OSI) durante o seu lançamento nesta mesma data\cite{oba2}.
 	
 	O $``$\textit{The Open Source Definition}$"$ \ ou  $``$A Definição de Código Aberto$"$  determina se uma licença pode ou não ser considerada \textit{open source}. Pois ser\textit{ open\\
 		source} não implica apenas em ter acesso ao código-fonte, contendo as instruções, em uma das linguagens de programação, que descrevem o funcionamento de uma aplicação ou \textit{software}.
@@ -461,12 +454,12 @@
 	
 	Mencionado sobre linguagem de programação, e como o \textit{Rasa} utiliza sua abstração de suas funções em \textit{Python}, essa linguagem foi também uma das características a ser analisada para a escolha deste \textit{framework. }Vejamos a seguir.
 	\section{Linguagem de programação \textit{Python}}
-	\indent\indent Como\ citado, anteriormente, no tópico 3.3 - Linguagem Natural -, segundo Russel e Norving, temos dois tipos de linguagens:  Linguagens Formais e as Linguagens Naturais. Dentro de um modelo de linguagem precisamente definido, temos então, o \textit{Python}.
+	\indent\indent Como\ citado, anteriormente em Linguagem Natural, segundo Russel e Norving, temos dois tipos de linguagens:  Linguagens Formais e as Linguagens Naturais. Dentro de um modelo de linguagem precisamente definido, temos então, o \textit{Python}.
 	
 	Bem, de maneira geral, a definição que \textit{Python} é um tipo de Linguagem Formal ainda é uma definição muito ampla. Vamos então, partir da seguinte pergunta: para que serve uma linguagem de programação? Para responder isso, faremos uma simples pesquisa no Wikipedia para descobrir o que é programação de computador. E encontramos que a programação de computadores é: 
 	
-	"... um processo que leva de uma formulação original de um problema de computação a programas de computador executáveis. A programação envolve atividades como análise, desenvolvimento, geração de algoritmos, verificação de requisitos de algoritmos, incluindo correção e consumo de recursos e implementação (geralmente referido como codificação) de algoritmos em uma determinada linguagem de programação."
-	
+	\begin{citacao}...um processo que leva de uma formulação original de um problema de computação a programas de computador executáveis. A programação envolve atividades como análise, desenvolvimento, geração de algoritmos, verificação de requisitos de algoritmos, incluindo correção e consumo de recursos e implementação (geralmente referido como codificação) de algoritmos em uma determinada linguagem de programação.\cite{oba14}\end{citacao}
+
 	Em resumo, a codificação está dizendo a um computador para fazer algo usando uma linguagem que ele compreende. A partir desse conhecimento, já entendemos a importância de uma linguagem de programação dentro da solução proposta deste trabalho, que no final, um \textit{chatterbot }será um programa de computador. 
 	
 	A escolha de uma linguagem de programação parte de cada um, de acordo com a sua familiaridade e nível de entendimento. Porém, para grande maioria dos \textit{frameworks,} eles foram desenvolvidos em uma determinada linguagem, para ser usado especificamente com essa linguagem. Existindo, porém, maneiras integrar os serviços dessas ferramentas ou dos \textit{softwares}, que foram construídos sobre diferentes linguagens de programação. Adiantando um pouco, essa integração pode ser feita a partir de um protocolo comum de comunicação, chamados $``$Interface de Programação de Aplicações$"$ , comumente conhecido como API. Veremos mais adiante.
@@ -498,7 +491,7 @@
 	\subsection{Biblioteca vs. \textit{Framework}}
 	\indent\indent Lembrando que o objetivo deste projeto não é aprofundar demais em tais conceitos, mas sim, buscar explicar de maneira que seja possível atingirmos o seu principal foco, que é o desenvolvimento do \textit{chatterbot }usando o \textit{framework} Rasa. Por isso, vamos fazer uma pesquisa rápida no \textit{Wikipedia, }para buscarmos o significado do termo Biblioteca (em computação):
 	
-	\textit{$``$...biblioteca é uma coleção de subprogramas utilizados no desenvolvimento de software. Bibliotecas contém código e dados auxiliares, que provém serviços a programas independentes, o que permite o compartilhamento e a alteração de código e dados de forma modular. Alguns executáveis são tanto programas independentes quanto bibliotecas, mas a maioria das bibliotecas não são executáveis. Executáveis e bibliotecas fazem referências mútuas conhecidas como ligações, tarefa tipicamente realizada por um ligador. \cite{oba7}$"$ } 
+	\begin{citacao}...biblioteca é uma coleção de subprogramas utilizados no desenvolvimento de software. Bibliotecas contém código e dados auxiliares, que provém serviços a programas independentes, o que permite o compartilhamento e a alteração de código e dados de forma modular. Alguns executáveis são tanto programas independentes quanto bibliotecas, mas a maioria das bibliotecas não são executáveis. Executáveis e bibliotecas fazem referências mútuas conhecidas como ligações, tarefa tipicamente realizada por um ligador.\cite{oba7}\end{citacao}
 	
 	Se compararmos biblioteca e \textit{framework}, talvez possa gerar um pouco de confusão entre os dois termos. E a diferença entre esses dois pode, algumas vezes, se tornar uma fonte de debate (Brennan, 2017). Para evitarmos essa confusão, vamos retornar a definição de \textit{framework} que concluímos no tópico anterior: um \textit{framework }abstraí complexidades e códigos que são comuns a um determinado problema, com a principal característica de conter técnicas de reutilização. Bem, se analisarmos agora a definição de Biblioteca que pesquisamos no \textit{Wikipedia}, resumi-la em um conjunto de código e dados que auxiliam, e que também podem ser compartilhados em programas independentes, percebemos claramente a proximidade entre esses dois termos. Ou seja, todos eles abstraem complexidades e também compartilham características de reuso.
 	
@@ -520,7 +513,7 @@
 	
 	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 2 Ends here %%%%%%%%%%%%%%%%%%%%
 	\subsection{Características do spaCy}
-	\indent\indent  Agora que já compreendemos a definição de Biblioteca, continuaremos a falar sobre o spaCy. Vamos seguir, basicamente, a sua documentação \cite{oba8}. Partindo de início para a suas características, pois já sabemos que é uma biblioteca que irá tratar das funcionalidades de PLN. 
+	\indent\indent  Agora que já compreendemos a definição de Biblioteca, continuaremos a falar sobre o spaCy. Vamos seguir, basicamente, a sua documentação\cite{oba8}. Partindo de início para a suas características, pois já sabemos que é uma biblioteca que irá tratar das funcionalidades de PLN. 
 	
 	Algumas das características do spaCy, referem-se a conceitos linguísticos, enquanto outras estão relacionados a funcionalidades mais gerais de aprendizado de máquina. Vamos conhecê-las.
 	
@@ -558,14 +551,14 @@
 	
 	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 3 Ends here %%%%%%%%%%%%%%%%%%%%
 	
-	O Rasa também permite trabalhar com outras bibliotecas de NLP - por exemplo, Mitie ou TensorFlow \cite{oba9}. A escolha do spaCy partiu basicamente de uma escolha pessoal, pela simplicidade que a documentação transmitiu, por ser \textit{open source }e usar a linguagem \textit{Python}, ser também uma biblioteca de uso profissional - como consta em sua página principal na internet: $``$spaCy foi projetado para ajudar a realizar trabalhos reais - para construir produtos reais \cite{oba10}$"$ . E por fim, o suporte de modelos estatístico em português.
+	O Rasa também permite trabalhar com outras bibliotecas de NLP - por exemplo, Mitie ou TensorFlow\cite{oba9}. A escolha do spaCy partiu basicamente de uma escolha pessoal, pela simplicidade que a documentação transmitiu, por ser \textit{open source }e usar a linguagem \textit{Python}, ser também uma biblioteca de uso profissional - como consta em sua página principal na internet: $``$spaCy foi projetado para ajudar a realizar trabalhos reais - para construir produtos reais\cite{oba10}$"$ . E por fim, o suporte de modelos estatístico em português.
 	\clearpage
 	\section{O \textit{Framework} Rasa}
 	\indent\indent Depois, de abordar todo o processo de decisões e escolha e conceitos prévios, enfim, chegamos na ferramenta que será responsável por nos ajudar a desenvolver o nosso \textit{chatterbot}: o \textit{Framework} Rasa. Nesse tópico, abordaremos o Rasa em duas partes: Rasa NLU e Rasa Core. Por fim, demonstraremos na arquitetura a integração de ambos.
 	
 	Toda a nossa referência vai partir especificamente da documentação da ferramenta. Isso vai nos permitir, extrair análises não somente da ferramenta como um \textit{framework} para desenvolver \textit{chatterbots}, mas também da qualidade de sua documentação, que impactará no nível de dificuldade para alcançar o objetivo proposto do projeto.
 	\subsection{Rasa NLU}
-	\indent\indent Segundo a documentação, Rasa NLU é uma ferramenta de código aberto para classificação de intenção e extração de entidade \cite{oba11}. E partindo da conclusão anterior, de que NLU procura entender a linguagem, permitindo que os computadores leiam e compreendam o texto, nos dá por base a função do Rasa NLU. 
+	\indent\indent Segundo a documentação, Rasa NLU é uma ferramenta de código aberto para classificação de intenção e extração de entidade\cite{oba11}. E partindo da conclusão anterior, de que NLU procura entender a linguagem, permitindo que os computadores leiam e compreendam o texto, nos dá por base a função do Rasa NLU. 
 	
 	A intenção, mencionada na definição do Rasa NLU, é basicamente a compreensão do texto. E entidades são os nomes do mundo real, as quais falamos nas características do spaCy, os nomes de pessoas, países, produtos, etc. E por aí, já temos a ideia de onde a biblioteca spaCy será usada. Faltando, apenas dizer, como será usada. Mas vou deixar essa parte para o tópico que mencionaremos a implementação completa do \textit{chatterbot}.
 	
@@ -574,20 +567,24 @@
 	\subsubsection{Rasa Core sem \textit{Python}}
 	\indent\indent Foi brevemente mencionado no tópico sobre \textit{Python}, o termo $``$Interface de Programação de Aplicações$"$ , conhecido como API. Vamos novamente, pesquisar de maneira rápida, com o objetivo apenas de alcançarmos um nível superficial de compreensão do termo, e que de uma maneira simples e geral, nos dará o entendimento de sua função. Para também não fugirmos do objetivo, e não complicar o experimento em si. Segundo, portanto o Wikipedia, API é:
 	
-	$``$...um conjunto de rotinas e padrões estabelecidos por um \textit{software} para a utilização das suas funcionalidades por aplicativos que não pretendem envolver-se em detalhes da implementação do \textit{software}, mas apenas usar seus serviços.\cite{oba12}$"$ 
 	
+	\begin{citacao}...um conjunto de rotinas e padrões estabelecidos por um \textit{software} para a utilização das suas funcionalidades por aplicativos que não pretendem envolver-se em detalhes da implementação do \textit{software}, mas apenas usar seus serviços.\cite{oba12}\end{citacao}
 	
 	
 	Resumindo, ao invés de codificarmos, implementando as funcionalidades em uma determinada linguagem de programação, uma API vai expor serviços específicos, abstraindo tanto as implementações quando o tipo de linguagem usada.
 	
-	No Rasa Core, existe uma API HTTP\textit{(Hypertext Transfer Protocol)} que irá realizar exatamente esse função de abstração \cite{oba13}. E o usuário desta ferramenta, caso não saiba codificar em \textit{Python}, isso não será será um obstáculo para a desenvolver um \textit{chatterbot}. A menção desta API foi apenas para mostrar uma funcionalidade de desenvolvimento do \textit{framework}, mas não será utilizada no experimento deste projeto.
+	No Rasa Core, existe uma API HTTP\textit{(Hypertext Transfer Protocol)} que irá realizar exatamente esse função de abstração\cite{oba13}. E o usuário desta ferramenta, caso não saiba codificar em \textit{Python}, isso não será será um obstáculo para a desenvolver um \textit{chatterbot}. A menção desta API foi apenas para mostrar uma funcionalidade de desenvolvimento do \textit{framework}, mas não será utilizada no experimento deste projeto.
 	\subsubsection{Integração com plataformas de mensagens}
-	\indent\indent Outra funcionalidade do Rasa Core, é de estar preparado para integrar com diferentes tipos de plataformas de mensagens - por exemplo,\textit{ Facebook Messenger}, \textit{Slack}, \textit{Telegram}, e outros \cite{oba13}. 
+	\indent\indent Outra funcionalidade do Rasa Core, é de estar preparado para integrar com diferentes tipos de plataformas de mensagens - por exemplo,\textit{ Facebook Messenger}, \textit{Slack}, \textit{Telegram}, e outros\cite{oba13}. 
 	
 	Para tornar o uso do \textit{chatterbot }mais amigável ao usuário, precisamos de uma interface gráfica, que irá permitir o seu uso, expondo-o ao mundo exterior. Aproveitamos que hoje já temos diversas plataformas oferecendo serviços de troca de mensagens, e que essas plataformas permitem ser acessadas através de seus serviços de API, o que o Rasa então irá fazer, é conectar o \textit{chatterbot }criado com ela, a essas plataformas. Ou seja, todo o fluxo de conversa, entrada e respostas, pode ser feito em qualquer plataforma que o Rasa tem um conector. No tópico de implementação, vamos detalhar a integração com o \textit{Facebook Messenger}.
 	\clearpage
 	
-	\section{Conhecendo o problema}
+	\chapter{Testes e Resultados}
+	\indent\indent Trataremos aqui, a implementação da solução em si. Abordando, pontos necessários para compreensão do processo de desenvolvimento. Vimos as principais definições presente no \textit{framework Rasa}, mas detalhes, não menos importante, serão necessários para uma boa compreensão. Antes, vamos conhecer melhor um pouco mais do problema proposto.
+	
+	
+		\section{Conhecendo o problema}
 	
 	\indent\indent Abordamos, nos tópicos anteriores, noções e características do \textit{framework} Rasa. Mas antes de entrarmos na implementação da solução, vamos conhecer mais sobre o problema tema deste projeto.
 	
@@ -682,30 +679,20 @@
 	
 	A partir dessas duas tabelas, definimos o domínio do problema em que o \textit{chatterbot }irá atuar. Resumindo, o cliente que está buscando fazer seu pedido de \textit{delivery}, poderá solicitar ao assistente virtual informações como, a descrição dos itens presente no cardápio ou perguntar também sobre métodos de pagamento aceito pelo restaurante \textit{DG Food}.
 	
-	\chapter{Testes e Resultados}
-	\indent\indent Trataremos aqui, a implementação da solução em si. Abordando, pontos necessários para compreensão do processo de desenvolvimento. Vimos as principais definições presente no \textit{framework} Rasa, mas detalhes não menos importante, será necessário para uma boa compreensão.
-	
 	\section{Documentação oficial}
 	\indent\indent 
 	Vamos falar um pouco sobre a documentação oficial do \textit{framework} Rasa, que foi a nossa fonte principal de referência para trabalhar com a ferramenta.
 	
-	Dentro dessa documentação existem 4 (quatro) tutoriais que ensinam, a partir de exemplos já definidos, como usar a ferramenta na construção de um \textit{chatterbot}, são eles: \textit{Building a Simple Bot \cite{teste1}, Supervised Learning Tutorial \cite{teste2}, Interactive Learning \cite{teste3} e \textit{Rasa Core without Python} \cite{teste4}}.\ Buscando familiarização com o \textit{framework}, parti para o primeiro  tutorial da lista, que é a construção de um \textit{bot} simples. Vejamos a definição desse tutorial, segundo a sua documentação:
+	Dentro dessa documentação existem 4 (quatro) tutoriais que ensinam, a partir de exemplos já definidos, como usar a ferramenta na construção de um \textit{chatterbot}, são eles: \textit{Building a Simple Bot\cite{teste1}, Supervised Learning Tutorial\cite{teste2}, Interactive Learning\cite{teste3} e \textit{Rasa Core without Python}\cite{teste4}}.\ Buscando familiarização com o \textit{framework}, parti para o primeiro  tutorial da lista, que é a construção de um \textit{bot} simples. Vejamos a definição desse tutorial, segundo a sua documentação:
 	
-	
-	
-	$``$...criar seu primeiro \textit{bot}, adicionando todas as partes de um aplicativo Rasa, que verifique o nosso estado de humor atual e tente nos motivar quando estivermos tristes. Ele consultará nosso humor e, com base em nossa resposta, responderá com uma imagem engraçada ou uma mensagem.$"$ 
-	
+	\begin{citacao}...criar seu primeiro \textit{bot}, adicionando todas as partes de um aplicativo Rasa, que verifique o nosso estado de humor atual e tente nos motivar quando estivermos tristes. Ele consultará nosso humor e, com base em nossa resposta, responderá com uma imagem engraçada ou uma mensagem.\cite{teste1}\end{citacao}
 	
 	
 	Seguindo a documentação, foi possível estruturar e conhecer melhor todas as partes de desenvolvimento do \textit{chatterbot }usadas pelo Rasa, incluindo: a sua instalação e configuração, definição de domínio, definição do interpretador NLU, definição das histórias, a junção de todas as partes anteriores, e por fim, um item bônus de como integrar a solução com o \textit{Facebook Messenger}.
 	
 	Concluindo o tutorial básico, mantendo a ordem, iniciei o tutorial de aprendizado supervisionado. Vamos então, conhecer o objetivo deste tutorial:
 	
-	
-	
-	$``$...criaremos um \textit{bot} de pesquisa de restaurantes, treinando uma rede neural a partir de exemplos de conversas. Um usuário pode perguntar algum tipo restaurante - por exemplo, um restaurante mexicano -, e o \textit{bot} perguntará mais detalhes até que esteja pronto para lhe sugerir um restaurante.$"$ 
-	
-	
+	\begin{citacao}...criaremos um \textit{bot} de pesquisa de restaurantes, treinando uma rede neural a partir de exemplos de conversas. Um usuário pode perguntar algum tipo restaurante - por exemplo, um restaurante mexicano -, e o \textit{bot} perguntará mais detalhes até que esteja pronto para lhe sugerir um restaurante.\cite{teste2}\end{citacao}
 	
 	A diferença deste exemplo com o primeiro, está na complexidade do fluxo da conversa. Necessitando ao segundo, uma melhor definição de histórias, que será a base de treinamento para o que o \textit{bot} possa aprender. E é em cima dessa dificuldade de se definir as histórias, no caso de não se ter pronto uma base de treinamento, que trata o terceiro tutorial. Nele é possível conhecer uma forma mais simples de gerar essas histórias, que é através de um $``$treinamento \textit{online}$"$ .\  A partir do conhecimento em cima desses três exemplos, temos informações suficiente para atingirmos o objetivo deste projeto.
 	
@@ -714,11 +701,9 @@
 	
 	Seguindo as orientações da documentação oficial do Rasa, pede-se que instalemos uma distribuição específica da linguagem Python, chamada: \textit{Anaconda}. Que segundo o seu \textit{site} oficial, destaca que:
 	
+	\begin{citacao}...a Distribuição Anaconda é open source, e também, a maneira mais fácil e rápida, usada para fazer ciência de dados e aprendizado de máquina em Python e R, tanto no Linux, Windows ou Mac OS X. É o padrão da indústria para desenvolvimento, teste e treinamento em única máquina.\cite{teste5}\end{citacao}
 	
-	
-	\textit{$``$...a Distribuição Anaconda é open source, e também, a maneira mais fácil e rápida, usada para fazer ciência de dados e aprendizado de máquina em Python e R, tanto no Linux, Windows ou Mac OS X. É o padrão da indústria para desenvolvimento, teste e treinamento em única máquina \cite{teste5}.$"$ }
-	
-	
+		
 	
 	Ao citar ciência de dados e aprendizado de máquina, concluímos que, a \textit{Distribuição Anaconda }ou, simplesmente, \textit{Anaconda}, irá nos ajudar a trabalhar com a área da Inteligência Artificial, usando as linguagens de programação \textit{Python} ou \textit{R}. Porém, em nosso projeto, utilizaremos apenas a primeira.
 	
@@ -746,7 +731,7 @@
 	
 	
 	
-	Para o Python, existe um repositório de \textit{software} chamado $``$\textit{Python Package Index} (PyPI)$"$  , em tradução livre: Índice de Pacotes Python. O PyPI ajudará a encontrar e instalar \textit{softwares} desenvolvidos e compartilhados pela comunidade \textit{Python}\ \cite{teste6}.  E \textit{pip} é um programa de linha de comando \cite{teste7}, utilizado para instalar localmente os pacotes ou \textit{softwares} existentes em seu repositório. No caso do Rasa, como é um \textit{software} que está no repositório \textit{PyPI}, para a sua instalação, basta-se utilizar o comando acima mencionado.
+	Para o Python, existe um repositório de \textit{software} chamado $``$\textit{Python Package Index} (PyPI)$"$  , em tradução livre: Índice de Pacotes Python. O PyPI ajudará a encontrar e instalar \textit{softwares} desenvolvidos e compartilhados pela comunidade \textit{Python}\\cite{teste6}.  E \textit{pip} é um programa de linha de comando\cite{teste7}, utilizado para instalar localmente os pacotes ou \textit{softwares} existentes em seu repositório. No caso do Rasa, como é um \textit{software} que está no repositório \textit{PyPI}, para a sua instalação, basta-se utilizar o comando acima mencionado.
 	
 	
 	
@@ -1075,20 +1060,36 @@
 	Para treinar o modelo propriamente dito, iremos utilizar um \textit{script} auxiliar em \textit{Python} que iniciará o interpretador do \textit{Rasa NLU,} e invocará o treinamento, passando como parâmetros as nossa \textit{intents} e \textit{entities} definidas anteriormente utilizando o \textit{Chatito}. O arquivo contendo o script, encontra-se na raiz do projeto, com o nome de \textit{nlu\_modle.py}.
 	
 	
+	\begin{lstlisting}[caption={\textit{Script} de treinamento do NLU codificado em \textit{Python}},label={lst:NluModle},language=Python]
+	from __future__ import absolute_import
+	from __future__ import division
+	from __future__ import print_function
+	from __future__ import unicode_literals
 	
+	from rasa_nlu.training_data import load_data
 	
+	from rasa_nlu.config import RasaNLUModelConfig
+	from rasa_nlu.model import Trainer, Metadata, Interpreter
+	from rasa_nlu import config
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 9 starts here %%%%%%%%%%%%%%%%%%%%
+	def train (data, config_file, model_dir):
+	training_data = load_data(data)
+	configuration = config.load(config_file)
+	trainer = Trainer(configuration)
+	trainer.train(training_data)
+	model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
 	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=5.81in,height=4.32in]{./media/teste8.png}
-		\end{center}
-		\caption{\textit{Script} de treinamento do NLU codificado em \textit{Python}.}
-	\end{figure}
+	def run():
+	interpreter = Interpreter.load('./models/nlu/default/chat')
+	print(interpreter.parse('Pode me enviar o seu cardápio?'))
+	print(interpreter.parse('Me mostra o menu?'))
 	
+	if __name__ == '__main__':
+	train('./data/training_data.json', './config/config.yml', './models/nlu')
+	run()
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 9 Ends here %%%%%%%%%%%%%%%%%%%%
+	\end{lstlisting}
+	
 	
 	Invocando esse \textit{script, o} \textit{Rasa NLU} fará o treinamento e retornará a confiança da interpretação das nossa frases de teste.
 	
@@ -1115,37 +1116,55 @@
 	Para realizar isso, executaremos o seguinte \textit{script Python}, que está contido no arquivo \textit{dialogue\_model.py} de nosso projeto.
 	
 	
+	\begin{lstlisting}[caption={\textit{Script} de integração \textit{Rasa Core} e \textit{Rasa NLU.}},label={lst:NluModle},language=Python]
+	from __future__ import absolute_import
+	from __future__ import division
+	from __future__ import print_function
+	from __future__ import unicode_literals
 	
+	from rasa_core import utils
+	from rasa_core.agent import Agent
+	from rasa_core.policies.keras_policy import KerasPolicy
+	from rasa_core.policies.memoization import MemoizationPolicy
+	from rasa_core.featurizers import (MaxHistoryTrackerFeaturizer,
+			BinarySingleStateFeaturizer)
 	
+	if __name__ == '__main__':
+		utils.configure_colored_logging(loglevel="INFO")
+		
+		training_data_file = './data/stories.md'
+		model_path = './models/dialogue'
+		
+		featurizer = MaxHistoryTrackerFeaturizer(BinarySingleStateFeaturizer(),
+		max_history=5)
+		
+		agent = Agent("chat_domain.yml",
+		policies=[MemoizationPolicy(max_history=5), KerasPolicy(featurizer)])
+		
+		training_data = agent.load_data(training_data_file)
 	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 11 starts here %%%%%%%%%%%%%%%%%%%%
+	agent.train(
+		training_data,
+		augmentation_factor=50,
+		epochs=500,
+		batch_size=10,
+		validation_split=0.2
+	)
 	
-	\begin{figure}[htb]
-		\begin{center}
-			\includegraphics[width=6.27in,height=4.57in]{./media/teste10.png}
-		\end{center}
-		\caption{\textit{Script} de integração \textit{Rasa Core} e \textit{Rasa NLU.}}
-	\end{figure}
+	agent.persist(model_path)
 	
-	
-	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 11 Ends here %%%%%%%%%%%%%%%%%%%%
+	\end{lstlisting}
+
 	Por fim, executamos o nosso \textit{chatterbot}.
 	
-	
 	\textit{python -m rasa\_core.run -d models/dialogue/ -u models/nlu/default/chat/}
-	
-	
-	
-	
+		
 	Esse comando está dizendo para rodar o \textit{bot} usando o modelo treinado de nlu (-u models/nlu/default/chat/), juntamente com o modelo fluxo de conversa (histórias), treinado pelo Rasa Core (-d models/dialogue/).
 	
 	\subsection{Integrando com o \textit{Facebook Messenger}}
 	\indent\indent Como foi mencionado, o Rasa permite integração com diversas plataformas de mensagens, e uma delas é o \textit{Facebook Messenger}. A integração é feita de forma muito simples bastando passar o conector $"$facebook$"$  como parâmetro e as credenciais do \textit{Facebook}. Essas credenciais são fornecidas pela API do \textit{Facebook}, sendo necessário criar uma página no \textit{Facebook} e um aplicativo para essa página.
 	
 	De posse do \textit{secret} do aplicativo e do \textit{token} gerado na página do desenvolvedor do \textit{Facebook} criamos um arquivo .yml que passaremos para o rasa como parâmetro. Com esse arquivo o Rasa se comunicará direto com o API do \textit{Facebook} recebendo as mensagens postados no \textit{Messenger} na página do \textit{Facebook} do nosso aplicativo.
-	
-	
-	
 	
 	
 	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 12 starts here %%%%%%%%%%%%%%%%%%%%
@@ -1160,72 +1179,147 @@
 	
 	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 12 Ends here %%%%%%%%%%%%%%%%%%%%
 	
-	O \textit{bot} se comunica com o \textit{Facebook } fazendo o uso de \textit{webhooks, }ou seja, ele invoca uma url passando os dados da conversa e espera uma resposta que será devolvida para o usuário. Para isso funcionar o \textit{chatbot }precisa estar acessível pela internet, isso pode ser feito colocando o \textit{bot} para funcionar em um servidor na internet, ou fazendo o uso de uma ferramenta de desenvolvimento chamada \textit{ngrok}. Essa ferramenta chamada \textit{ngrok} é capaz de pegar a porta local exposta pelo rasa e expô-la na internet fazendo um roteamento para um endereço do \textit{ngrok}, esse endereço que o \textit{ngrok} gera é acessível por qualquer pessoa na internet e muito utilizado para desenvolvimento de aplicações e testes.
+	O \textit{bot} se comunica com o \textit{Facebook } fazendo o uso de \textit{webhooks, }ou seja, ele invoca uma url passando os dados da conversa e espera uma resposta que será devolvida para o usuário. Para isso funcionar o \textit{chatbot }precisa estar acessível pela internet, isso pode ser feito colocando o \textit{bot} para funcionar em um servidor na internet, ou fazendo o uso de uma ferramenta de desenvolvimento chamada \textit{ngrok}. Essa ferramenta chamada \textit{ngrok} é capaz de pegar a porta local exposta pelo rasa e expô-la na internet fazendo um roteamento para um endereço do \textit{ngrok}, esse endereço que o \textit{ngrok} gera é acessível por qualquer pessoa na internet e muito utilizado para desenvolvimento de aplicações e testes. Veja abaixo o resultado final.
+	
+	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 13 starts here %%%%%%%%%%%%%%%%%%%%
+	
+	\begin{figure}[htb]
+		\begin{center}
+			\includegraphics[width=0.6\textwidth]{./media/teste12.png}
+		\end{center}
+		\caption{Resultado final da integração com o \textit{Facebook Messenger}}
+	\end{figure}
+	
+	
+	%%%%%%%%%%%%%%%%%%%% Figure/Image No: 13 Ends here %%%%%%%%%%%%%%%%%%%%
+	
+	\chapter{Considerações Finais}
+	\indent\indent  Seguindo no fluxo de desenvolvimento do \textit{chatterbot}, iniciaremos citando as dificuldades e/ou problemas encontrados durante o projeto. Na fase de definição do domínio de atuação do \textit{bot}, deparamos com a dificuldade de modelar as intenções e ações das possíveis conversas que o interlocutor poderia ter com o \textit{bot}. Essa dificuldade estava em encontrar uma maneira de não fugir do seu escopo de atuação. Ou seja, planejar e analisar bem todos esses atributos de \textit{intents} e \textit{actions} para aquilo que realmente é desejável no contexto do projeto. Simplificar ao máximo a quantidade de intenções, pois elas estão proporcionalmente relacionadas ao tamanho do domínio. Sendo que ao final, o objetivo é conseguir um \textit{chatterbot} que irá sempre tentar manter o usuário no fluxo da conversa, sem dispersar o foco de seu assunto. E ainda, durante a definição do domínio, surgiram diversos debates, e até mesmo confusões sobre como seria o fluxo da conversa. Chegando a ser alterada diversas vezes a quantidade e o contexto das intenções, e também as ações do bot. Até então, chegarmos ao modelo que trabalhamos no projeto. \par
+	
+	Depois de termos passado um bom tempo para chegar em um modelo de domínio aceitável para atuação do \textit{bot}, partimos para a preparação dos conjuntos de dados, ou seja, os \textit{datasets} de treinamento: NLU e \textit{histories}. Para o primeiro, usamos o \textit{Chatito}, que é uma ferramenta que nos ajudou a evitar um árduo trabalho para gerar um \textit{dataset} no padrão aceitável do Rasa NLU. Porém, é uma ferramenta, que mesmo com poucas \textit{intents} no modelo de domínio, mas se estiver contido um conjunto grande de frases, sinônimos ou entidades, vai gerar um \textit{dataset} para o NLU muito grande. E em alguns dos itens, ao serem analisados mais de perto, podem não fazer sentido de estarem no conjunto de dados, pois, nitidamente, perdem a sua semântica através da lógica de expansão de contexto usada pelo \textit{Chatito}. Mas de toda forma, é uma ferramenta que permitiu economizar bastante tempo, simplificando em muito o trabalho. \par
+	
+	Ainda sobre NLU, umas das coisas que percebemos e que altera bastante a previsão de uma intenção dada uma determinada sentença, são as pontuações, principalmente a interrogação. Uma frase com o ponto de interrogação que no \textit{Chatito} foi definida sem, gerou previsões de \textit{intents} totalmente diferente da intenção real da sentença. Isso fez com que tivéssemos que duplicar as mesmas frases das \textit{intents} no \textit{Chatito}, com e sem a interrogação. Consequentemente, houve um aumento no tamanho do \textit{dataset} de treinamento. Mas a interferência disso é que irá demorar um pouco mais no seu treinamento. E o tempo médio de treinamento, segundo a própria documentação, é de uns 13 minutos para um computador básico com processador Intel Core I7.\par
+	
+	Para as \textit{histories}, que é o \textit{dataset} que irá treinar o modelo estatístico do fluxo da conversa, como não tínhamos acesso a dados de conversas reais, podemos dizer então que esse \textit{dataset} usado para este projeto, é um \textit{dataset} fictício. Em outras palavras, é simplesmente um \textit{dataset} simulado, gerado a partir do treinamento \textit{online}. Construir um \textit{dataset} dessa maneira, pode não refletir corretamente uma conversa real, pois, como mencionado, é apenas uma simulação de possíveis conversas entre os interlocutores e o \textit{bot}. Mas para demonstrar como se constrói um \textit{chatterbot}, esse \textit{dataset }atendeu bem o seu objetivo. \par
+	
+	A integração com o \textit{Facebook }do \textit{chatterbot }construído nesse trabalho foi feita com o auxílio do framework do \textit{Rasa} que já por já criar os \textit{endpoints} necessário para a integração só exige que o \textit{bot} seja disponibilizado em em servidor com acesso direto a internet. Assim pudemos testar a integração com o \textit{Messenger }e vimos que funcionava da mesma maneira que rodando localmente, ficou bem claro que a integração com qualquer tipo de serviço de mensageria seria simples pois já existem conectores para serviços muito utilizados como: \textit{slack, telegram }e\textit{ twilio.}\par
+	
+	Sobre a documentação do \textit{Rasa},\ buscamos sempre manter a orientação sobre esta  referência. E por termos atingido um resultado satisfatório, podemos concluir que é uma documentação de boa qualidade. De fácil compreensão nos seus tutoriais, e também da explicação em si sobre as funcionalidades do \textit{framework}. Só precisamos sair do escopo da referência oficial, quando foi mencionado ferramentas ou bibliotecas externas ao \textit{Rasa}, com por exemplo o \textit{spaCy}, o \textit{Chatito} ou a integração com o \textit{Facebook Messenger}. Agora, com relação ao \textit{Python}, é uma documentação que parte do suposto que o usuário já tem um certo nível de domínio com a linguagem de programação. Mas isso, é se você não usar a API HTTP, que permite você usar o \textit{Rasa} sem precisar tanto conhecer de \textit{Python}. E dentro de uma abordagem mais pessoal, a documentação do \textit{Rasa} ajudou indiretamente a compreender melhor sobre Processamento de Linguagem Natural, devido a um bom detalhamento das partes que compõe o desenvolvimento do \textit{bot} através do \textit{framework}. Suas explicações permitiram que pudéssemos facilmente referenciá-las aos conceitos de PLN e Linguística.\par
+	
+	Uma consideração importante a ser feita é com relação a definição final do modelo de domínio. Como mencionado anteriormente, tivemos muitas dúvidas e mudanças, e por fim, escolhemos trabalhar com um domínio simples com apenas 5 tipos de intenções, assim como também, poucas \textit{actions}, ou seja, o universo de respostas do \textit{bot}. Isso acabou facilitando melhor o compreendimento do funcionamento do \textit{framework}, descomplicando etapas de desenvolvimento e permitindo-nos alcançar o objetivo de ter um \textit{chatterbot}, mesmo que limitado em suas conversas, integrado ao \textit{Facebook Messenger}. Creio que assim, conseguimos alcançar um MVP (\textit{Minimum Viable Product}), um Produto Mínimo Viável, e a sua melhoria pode ser feita com o tempo, mantendo a sua base de desenvolvimento, e simplesmente, modificando algumas partes de código.\par
 	
 	\chapter{Conclusão}
-	\indent\indent  Seguindo no fluxo de desenvolvimento do \textit{chatterbot}, iniciaremos citando as dificuldades e/ou problemas encontrados durante o projeto. Na fase de definição do domínio de atuação do \textit{bot}, deparamos com a dificuldade de modelar as intenções e ações das possíveis conversas que o interlocutor poderia ter com o \textit{bot}. Essa dificuldade estava em encontrar uma maneira de não fugir do seu escopo de atuação. Ou seja, planejar e analisar bem todos esses atributos de \textit{intents} e \textit{actions} para aquilo que realmente é desejável no contexto do projeto. Simplificar ao máximo a quantidade de intenções, pois elas estão proporcionalmente relacionadas ao tamanho do domínio. Sendo que ao final, o objetivo é conseguir um \textit{chatterbot} que irá sempre tentar manter o usuário no fluxo da conversa, sem dispersar o foco de seu assunto. E ainda, durante a definição do domínio, surgiram diversos debates, e até mesmo confusões sobre como seria o fluxo da conversa. Chegando a ser alterada diversas vezes a quantidade e o contexto das intenções, e também as ações do bot. Até então, obtermos o modelo que trabalhamos no projeto. 
+	\indent\indent  O objetivo deste trabalho era de construir um \textit{chatterbot} capaz de auxiliar usuários em pedidos de comida \textit{online}. Esse \textit{bot} deveria ser capaz de entender e reagir a um diálogo oferecendo opções relacionadas ao cardápio e aos preços dos itens. Esse diálogo deveria acontecer fazendo o uso do aplicativo de mensagens \textit{Facebook} \textit{Messenger}\par
 	
-	Depois de termos passado um bom tempo para chegar em um modelo de domínio aceitável para atuação do \textit{bot}, partimos para a preparação dos conjuntos de dados, ou seja, os \textit{datasets} de treinamento: NLU e \textit{histories}. Para o primeiro, usamos o \textit{Chatito}, que é uma ferramenta que nos ajudou a evitar um árduo trabalho para gerar um \textit{dataset} no padrão aceitável do Rasa NLU. Porém, é uma ferramenta, que mesmo com poucas \textit{intents} no modelo de domínio, mas se estiver contido um conjunto grande de frases, sinônimos ou entidades, vai gerar um \textit{dataset} para o NLU muito grande. E em alguns dos itens, ao serem analisados mais de perto, podem não fazer sentido de estarem no conjunto de dados, pois, nitidamente, perdem a sua semântica através da lógica de expansão de contexto usada pelo \textit{Chatito}. Mas de toda forma, é uma ferramenta que permitiu economizar bastante tempo, simplificando em muito o trabalho. 
+	Todos esses objetivos foram alcançados pois com a utilização do \textit{framework Rasa }implementamos um \textit{chatterbot} que respondia ao diálogo da maneira proposta e também foi possível colocá-lo para responder as mensagens diretamente do \textit{Messenger.}\par
 	
-	Ainda sobre NLU, umas das coisas que percebemos e que altera bastante a previsão de uma intenção dada uma determinada sentença, são as pontuações, principalmente a interrogação. Uma frase com o ponto de interrogação que no \textit{Chatito} foi definida sem, gerou previsões de \textit{intents} totalmente diferente da intenção real da sentença. Isso fez com que tivéssemos que duplicar as mesmas frases das \textit{intents} no \textit{Chatito}, com e sem a interrogação. Consequentemente, houve um aumento no tamanho do \textit{dataset} de treinamento. Mas a interferência disso é que irá demorar um pouco mais no seu treinamento. E o tempo médio de treinamento, segundo a própria documentação, é de uns 13 minutos para um computador básico com processador Intel Core I7.
+	Identificamos que uma parte de grande importância na construção de \textit{bot} é o \textit{dataset }de treinamento das histórias e um modelo de domínio bem definido. Verificamos que quanto melhor e mais abrangente for o \textit{dataset }mais realista será o comportamento do \textit{chatterbot} e menor a incidência de ações erradas. Como não possuíamos um \textit{dataset }pronto, montamos o treinamento baseado em conversas nossas com o \textit{bot} o que acaba condicionando ao seu comportamento pois ele somente $``$conhece$"$  duas pessoas que criaram cenários limitados.\par
 	
-	Para as \textit{histories}, que é o \textit{dataset} que irá treinar o modelo estatístico do fluxo da conversa, como não tínhamos acesso a dados de conversas reais, podemos dizer então que esse \textit{dataset} usado para este projeto, é um \textit{dataset} fictício. Em outras palavras, é simplesmente um \textit{dataset} simulado, gerado a partir do treinamento \textit{online}. Construir um \textit{dataset} dessa maneira, pode não refletir corretamente uma conversa real, pois, como mencionado, é apenas uma simulação de possíveis conversas entre os interlocutores e o \textit{bot}. Mas para demonstrar como se constrói um \textit{chatterbot}, esse \textit{dataset }atendeu bem o seu objetivo. 
+	Foi possível concluir que no cenário atual, a construção de um \textit{chatterbot} para realizar uma tarefa bem definida, não requer grande conhecimento de PLN, pois com o uso das ferramentas como Rasa e suas bibliotecas que o integram, toda a parte de processamento natural fica a seu cargo. Da mesma forma que o Rasa, existem outras inúmeras ferramentas que tem a mesma finalidade, incluindo algumas comerciais desenvolvidas pela Microsoft(\textit{Azure Bot Service}), pela Amazon(Lex) e pela IBM(Watson Assistant). \par
 	
-	A integração com o \textit{Facebook }do \textit{chatterbot }construído nesse trabalho foi feita com o auxílio do framework do \textit{Rasa} que já por já criar os \textit{endpoints} necessário para a integração só exige que o \textit{bot} seja disponibilizado em em servidor com acesso direto a internet. Assim pudemos testar a integração com o \textit{Messenger }e vimos que funcionava da mesma maneira que rodando localmente, ficou bem claro que a integração com qualquer tipo de serviço de mensageria seria simples pois já existem conectores para serviços muito utilizados como: \textit{slack, telegram }e\textit{ twilio.}
+	Nosso objetivo principal não era somente a construção do \textit{chatterbot} de \textit{delivery}, mas também entender todo o processo de entendimento de linguagem natural e todos os desafios envolvidos nessa tarefa. Assim acabamos indo bem mais fundo no funcionamento interno da ferramenta do que seria necessário para somente fazê-lo funcionar.\par
 	
-	Sobre a documentação do \textit{Rasa},\ buscamos sempre manter a orientação sobre esta  referência. E por termos atingido um resultado satisfatório, podemos concluir que é uma documentação de boa qualidade. De fácil compreensão nos seus tutoriais, e também da explicação em si sobre as funcionalidades do \textit{framework}. Só precisamos sair do escopo da referência oficial, quando foi mencionado ferramentas ou bibliotecas externas ao \textit{Rasa}, com por exemplo o \textit{spaCy}, o \textit{Chatito} ou a integração com o \textit{Facebook Messenger}. Agora, com relação ao \textit{Python}, é uma documentação que parte do suposto que o usuário já tem um certo nível de domínio com a linguagem de programação. Mas isso, é se você não usar a API HTTP, que permite você usar o \textit{Rasa} sem precisar tanto conhecer de \textit{Python}. E dentro de uma abordagem mais pessoal, a documentação do \textit{Rasa} ajudou indiretamente a compreender melhor sobre Processamento de Linguagem Natural, devido a um bom detalhamento das partes que compõe o desenvolvimento do \textit{bot} através do \textit{framework}. Suas explicações permitiram que pudéssemos facilmente referenciá-las aos conceitos de PLN e Linguística.
+	Como próximos passos deste trabalho, poderíamos dar continuidade adicionando mais funções ao \textit{chatterbot}. Hoje o \textit{bot} somente auxilia nos pedidos ao restaurante, mas seria possível que o pedido já fosse enviado diretamente ao restaurante fazendo o uso de alguma API ou serviço disponibilizado pelo restaurante. Também seria um novo desafio fazer com o que o pagamento fosse gerenciado pelo \textit{bot }fazendo o uso de pagamento \textit{online}. Para que isso tudo pudesse funcionar, teríamos que guardar informações de um carrinho de compras com todos os itens selecionados pelo usuário, além de pegarmos e salvarmos seu endereço, com o cuidado de confirmar o endereço antes da finalização do pedido, evitando potenciais transtornos. Poderíamos também melhor a interação com usuário fazendo com que a escolha dos itens fosse baseada em múltiplas escolhas, podendo ser utilizados, inclusive, menus simples que funcionam dentro do contexto do \textit{Messenger }do\textit{ Facebook.}\par
 	
-	Como próximos passos deste trabalho, poderíamos dar continuidade adicionando mais funções ao \textit{chatterbot}. Hoje o \textit{bot} somente auxilia nos pedidos ao restaurante, mas seria possível que o pedido já fosse enviado diretamente ao restaurante fazendo o uso de alguma API ou serviço disponibilizado pelo restaurante. Também seria um novo desafio fazer com o que o pagamento fosse gerenciado pelo \textit{bot }fazendo o uso de pagamento \textit{online}. Para que isso tudo pudesse funcionar, teríamos que guardar informações de um carrinho de compras com todos os itens selecionados pelo usuário, além de pegarmos e salvarmos seu endereço, com o cuidado de confirmar o endereço antes da finalização do pedido, evitando potenciais transtornos. Poderíamos também melhor a interação com usuário fazendo com que a escolha dos itens fosse baseada em múltiplas escolhas, podendo ser utilizados, inclusive, menus simples que funcionam dentro do contexto do \textit{Messenger }do\textit{ Facebook.}
-	
-	Finalizando, o desenvolvimento deste projeto, enriqueceu-nos e nos motivou ainda mais a compreender e trabalhar com área de Inteligência Artificial. Diante de uma simples solução aos olhos externos, mas que envolvem conceitos e estudos tão ricos quanto complexos, nos faz imaginar a infinitude de aplicações para a área.
+	Finalizando, o desenvolvimento deste projeto, enriqueceu-nos e nos motivou ainda mais a compreender e trabalhar com área de Inteligência Artificial. Diante de uma simples solução aos olhos externos, mas que envolvem conceitos e estudos tão ricos quanto complexos, nos faz imaginar a infinitude de aplicações para a área.\par
 	
 	\begin{thebibliography}{99}
 		
-		\bibitem{delivery}{\em História do Delivery: uma prática antiga com novo visual}, {\url{https://blog.sistemavitto.com.br/historia-do-delivery-no-mundo/}}
+		\bibitem{delivery}{\em História do Delivery: uma prática antiga com novo visual}. Disponível em: {\url{https://blog.sistemavitto.com.br/historia-do-delivery-no-mundo/}}. Acesso em: 03 abr.2018.
+		
 		\bibitem{weizenbaum}Weizenbaum, Joseph. {\em ELIZA$-$a computer program for the study of natural language communication between man and machine}. Communications of the ACM 9.1 (1966): 36-45.
-		\bibitem{pizzatel}Xavier, Maurício. {\em A moda de pedir pizza pelo telefone}, 1 Julho 2015, {\url{https://vejasp.abril.com.br/blog/30-anos/a-moda-de-pedir-pizza-pelo-telefone/}} 
-		\bibitem{10bi} {\em Mercado de delivery de alimentos fatura mais de R\$ 10 bi no Brasil}, 27 Fevereiro 2018, {\url{http://www.abrasel.com.br/component/content/article/7-noticias/5905-27022018-mercado-delivery-de-alimentos-fatura-mais-de-r-10-bi-no-brasil.html}}
-		\bibitem{foodSpain}{\em Fast food consumption in Spain will rise by 50\% over the next five years}, Lunes, 11 de Enero, 2016, {\url{https://www.eae.es/actualidad/noticias/fast-food-consumption-in-spain-will-rise-by-50-over-the-next-five-years}}
+		
+		\bibitem{pizzatel}Xavier, Maurício. {\em A moda de pedir pizza pelo telefone}. Disponível em: {\url{https://vejasp.abril.com.br/blog/30-anos/a-moda-de-pedir-pizza-pelo-telefone/}}. Acesso em: 03 abr.2018.
+		
+		\bibitem{10bi} {\em Mercado de delivery de alimentos fatura mais de R\$ 10 bi no Brasil}. Disponível em: {\url{http://www.abrasel.com.br/component/content/article/7-noticias/5905-27022018-mercado-delivery-de-alimentos-fatura-mais-de-r-10-bi-no-brasil.html}}. Acesso em: 03 abr.2018.
+		
+		\bibitem{foodSpain}{\em Fast food consumption in Spain will rise by 50\% over the next five years}. Disponível em: {\url{https://www.eae.es/actualidad/noticias/fast-food-consumption-in-spain-will-rise-by-50-over-the-next-five-years}}. Acesso em: 27 fev.2018.
+		
+	
 		\bibitem{yu} YU, D.; WANG, S.; KARAM, Z.; DENG, L. {\em Language recognition using deep-structured conditional random fields}. Proc. ICASSP, 2010. p.5030-5033. 
-		\bibitem{turing}A. M. TURING. {\em I.?COMPUTING MACHINERY AND INTELLIGENCE}, Mind, Volume LIX, Issue 236, 1 October 1950, Pages 433?460, {\url{https://doi.org/10.1093/mind/LIX.236.433}}
+		
+		\bibitem{turing}A. M. TURING. {\em I.A. COMPUTING MACHINERY AND INTELLIGENCE}, Mind, Volume LIX, Issue 236, 01 Outubro 1950, p.433-460, {\url{https://doi.org/10.1093/mind/LIX.236.433}}
+		
 		\bibitem{ganascia}GANASCIA, Jean-Gabriel. {\em Inteligência artificial}. São Paulo: Editora Ática, 1997.
-		\bibitem{Deryugina}Deryugina, O.V. {\em Sci. Tech.Inf}. Proc. (2010) 37: 143. {\url{https://doi.org/10.3103/S0147688210020097}}
+		
+		\bibitem{Deryugina}Deryugina, O.V. {\em Sci. Tech.Inf}. Proc. (2010) 37: 143. Disponível em: {\url{https://doi.org/10.3103/S0147688210020097}}. Acesso em: 01 jul.2018.
+		
+		
 		\bibitem{Wallace}Wallace R.S. {\em (2009) The Anatomy of A.L.I.C.E.}. In: Epstein R., Roberts G., Beber G. (eds) Parsing the Turing Test. Springer, Dordrecht
+		
 		\bibitem{Fryer} Fryer, L. K., and Rollo Carpenter. {\em Bots as language learning tools}. Language Learning $\&$ Technology (2006).
+		
 		\bibitem{Mauldin}Mauldin, M. L. (1994). {\em Chatterbots, tinymuds, and the turing test: Entering the loebner
 			prize competition}.
+		
 		\bibitem{neves}Neves, A. M. M. e Barros, F. A. (2005). {\em iaiml: Um mecanismo
 			para tratamento de intenção em chatterbots.}
+		
 		\bibitem{Jeffrey} Jeffrey Pennington, Richard Socher, and Christopher D. Manning. 2014. {\em GloVe: Global Vectors for Word Representation}.
-		\bibitem{rasanlu}Nichol, Alan. {\em rasa\_nlu Documentation}. Mar 23, 2018, {\url{https://media.readthedocs.org/pdf/rasa-nlu/latest/rasa-nlu.pdf}}
+		
+		\bibitem{rasanlu}Nichol, Alan. {\em rasa\_nlu Documentation}. Disponível em: {\url{https://media.readthedocs.org/pdf/rasa-nlu/latest/rasa-nlu.pdf}}. Acesso em: 18 jul.2018.
+		
+				
 		\bibitem{Hirschberg} J. Hirschberg, B. W. Ballard and D. Hindle, "Natural language processing," in AT\&T Technical Journal, vol. 67, no. 1, pp. 41-57, January-February 1988.
-		\bibitem{Copestake} Copestake, Ann, {\em 8 Lectures}. 2004 https://www.cl.cam.ac.uk/teaching/2002/NatLangProc/revised.pdf
+		
+		\bibitem{Copestake} Copestake, Ann, {\em  8 Lectures}. 2004. Disponível em: {\url{ https://www.cl.cam.ac.uk/teaching/2002/NatLangProc/revised.pdf}}. Acesso em: 06 jun.2018.
+		
 		\bibitem{keras}Chollet, Fran\c{c}ois and others {\em Keras}, 2015, {\url{https://keras.io}}
+		
 		\bibitem{jurafsky} Jurafsky, Daniel; Marin, James H. {\em Speech and Language Processing}, 2008.
+		
 		\bibitem{Liddy}Liddy, Elizabeth D. {\em Natural Language Processing}, Syracuse University, 2001.
-		\bibitem{iFood}Lima, Mariana, {\em IFOOD LANÇA CHATBOT PARA PEDIR PIZZA NO MESSENGER, MAS SERÁ SE FUNCIONA}, NoVarejo 2017. {\url{http://www.portalnovarejo.com.br/2017/07/12/ifood-chatbot-messenger/}}
+		
+		\bibitem{iFood}Lima, Mariana, {\em IFOOD LANÇA CHATBOT PARA PEDIR PIZZA NO MESSENGER, MAS SERÁ SE FUNCIONA}. Disponível em: {\url{http://www.portalnovarejo.com.br/2017/07/12/ifood-chatbot-messenger/}}. Acesso em: 10 jul.2018.
+		
+		
 		\bibitem{NLU}Navigli, Roberto. {\em Natural Language Understanding: Instructions for (Present and Future) Use}, 2018.
-		\bibitem{oba}Sauvé, Jacques.  {\em Frameworks O que é um framework?}. {url{http://www.dsc.ufcg.edu.br/\~jacques/cursos/map/html/frame/oque.htm}}
-		\bibitem{oba1}{\em Debian Social Contract}, Debian Project. {\url{https://www.debian.org/social\_contract\#guidelines}}
-		\bibitem{oba2}{\em History of OSI}, Open Source Initiave. {\url{https://opensource.org/history}}
+		
+		\bibitem{oba}Sauvé, Jacques.  {\em Frameworks O que é um framework?}. Disponível em: {\url{http://www.dsc.ufcg.edu.br/\~jacques/cursos/map/html/frame/oque.htm}}. Acesso em: 10 jul.2018.
+		
+		\bibitem{oba1}{\em Debian Social Contract}, Debian Project. Disponível em: {\url{https://www.debian.org/social\_contract\#guidelines}}. Acesso em: 12 jul.2018.
+		
+		\bibitem{oba2}{\em History of OSI}, Open Source Initiave. Disponível em: {\url{https://opensource.org/history}}. Acesso em: 12 jul.2018.
+		
 		\bibitem{oba3}Pereira, Fernando;  Marinho, Ivo; Oliveira, Nelson. {\em Open Source software development}.
-		\bibitem{oba4}{\em Open Source Definition}, Open Source Initiave. {\url{https://opensource.org/docs/osd}}
+		
+		\bibitem{oba4}{\em Open Source Definition}, Open Source Initiave. Disponível em: {\url{https://opensource.org/docs/osd}}. Acesso em: 13 jul.2018.
+		
 		\bibitem{oba5}Romano, Fabrizio. {\em Learning Python}, Packt Publishing, 2015.
-		\bibitem{oba6}Brennan, Bobby (2017). {\em Libraries vs. Frameworks}. {\url{https://medium.com/datafire-io/libraries-vs-frameworks-626cdde799a7}}
-		\bibitem{oba7}{\em BIBLIOTECA (COMPUTAÇÃO).} In: WIKIPÉDIA, a enciclopédia livre. Flórida: Wikimedia Foundation, 2018. Disponível em: {\url{https://pt.wikipedia.org/w/index.php?title=Biblioteca\_(computa\%C3\%A7\%C3\%A3o)\&oldid=51936326}}. 
-		\bibitem{oba8}{\em spaCy 101: Everything you need to know.} In: spaCy Usage Documentation. {\url{https://spacy.io/usage/spacy-101}}
-		\bibitem{oba9}{\em Processing Pipeline}. In: Rasa NLU Documentation. {\url{https://nlu.rasa.com/pipeline.html}}
-		\bibitem{oba10}{\em spaCy $-$ Industrial-Strength Natural Language Processing} {\url{https://spacy.io/}}
-		\bibitem{oba11}{\em Language Understanding with Rasa NLU}. In: Rasa NLU Documentation. {\url{https://nlu.rasa.com/index.html}}
-		\bibitem{oba12}{\em INTERFACE DE PROGRAMAÇÃO DE APLICAÇÕES}. In: WIKIPÉDIA, a enciclopédia livre. Flórida: Wikimedia Foundation, 2018. {\url{https://pt.wikipedia.org/w/index.php?title=Interface_de_programa\%C3\%A7\%C3\%A3o_de_aplica\%C3\%A7\%C3\%B5es\&oldid=52559842}}
-		\bibitem{oba13}{\em	Connecting to messaging \& voice platforms}. In Rasa Core documentation. {\url{https://core.rasa.com/connectors.html}}
-		\bibitem{teste1}{\em Building a Simple Bot} In: Rasa Core Documentation. \url{https://core.rasa.com/tutorial_basics.html}
-		\bibitem{teste2}{\em Supervised Learning Tutorial}. In: Rasa Core Documentation. \url{https://core.rasa.com/tutorial_supervised.html}
-		\bibitem{teste3}{\em Interactive Learning}. In: Rasa Core Documentation. \url{https://core.rasa.com/tutorial_interactive_learning.html}
-		\bibitem{teste4}{\em Rasa Core without Python}. In: Rasa Core Documentation. \url{https://core.rasa.com/tutorial_remote.html}
-		\bibitem{teste5}{\em Anaconda. The Most Popular Python Data Science Platform}. \url{https://www.anaconda.com/what-is-anaconda/}
-		\bibitem{teste6}{\em PyPI - The Python Package Index}. \url{https://pypi.org/}
-		\bibitem{teste7}{\em User Guide - pip Documentation}. \url{https://pip.pypa.io/en/stable/user_guide/}
+		
+		\bibitem{oba6}Brennan, Bobby (2017). {\em Libraries vs. Frameworks}. Disponível em: {\url{https://medium.com/datafire-io/libraries-vs-frameworks-626cdde799a7}}. Acesso em: 13 jul.2018.
+		
+		\bibitem{oba7}{\em BIBLIOTECA (COMPUTAÇÃO).} In: WIKIPÉDIA, a enciclopédia livre. Flórida: Wikimedia Foundation, 2018. Disponível em: {\url{https://pt.wikipedia.org/w/index.php?title=Biblioteca\_(computa\%C3\%A7\%C3\%A3o)\&oldid=51936326}}. Acesso em: 14 jul.2018.
+		
+		\bibitem{oba8}{\em spaCy 101: Everything you need to know.} In: spaCy Usage Documentation. Disponível em: {\url{https://spacy.io/usage/spacy-101}}. Acesso em: 14 jul.2018.
+		
+		\bibitem{oba9}{\em Processing Pipeline}. In: Rasa NLU Documentation. Disponível em: {\url{https://nlu.rasa.com/pipeline.html}}. Acesso em: 18 jul.2018.
+		
+		\bibitem{oba10}{\em spaCy $-$ Industrial-Strength Natural Language Processing}. Disponível em: {\url{https://spacy.io/}}. Acesso em: 18 Jul.2018.
+		
+		\bibitem{oba11}{\em Language Understanding with Rasa NLU}. In: Rasa NLU Documentation. Disponível em: {\url{https://nlu.rasa.com/index.html}}. Acesso em: 19 jul.2018.
+		
+		
+		\bibitem{oba12}{\em INTERFACE DE PROGRAMAÇÃO DE APLICAÇÕES}. In: WIKIPÉDIA, a enciclopédia livre. Flórida: Wikimedia Foundation, 2018. {\url{https://pt.wikipedia.org/w/index.php?title=Interface_de_programa\%C3\%A7\%C3\%A3o_de_aplica\%C3\%A7\%C3\%B5es\&oldid=52559842}}. Acesso em: 19 jul.2018.
+		
+		\bibitem{oba13}{\em	Connecting to messaging \& voice platforms}. In Rasa Core documentation. Disponível em: {\url{https://core.rasa.com/connectors.html}}. Acesso em: 19 jul.2018.
+		
+		\bibitem{oba14}{\em PROGRAMAÇÃO DE COMPUTADORES}. In: WIKIPÉDIA, a enciclopédia livre. Flórida: Wikimedia Foundation, 2018. {\url{https://pt.wikipedia.org/wiki/Programa\%C3\%A7\%C3\%A3o_de_computadores}}. Acesso em: 19 jul.2018.
+		
+		\bibitem{teste1}{\em Building a Simple Bot} In: Rasa Core Documentation. Disponível em: {\url{https://core.rasa.com/tutorial_basics.html}}. Acesso em: 20 jul.2018.
+		
+		\bibitem{teste2}{\em Supervised Learning Tutorial}. In: Rasa Core Documentation. Disponível em: {\url{https://core.rasa.com/tutorial_supervised.html}}. Acesso em: 20 jul.2018.
+		
+		\bibitem{teste3}{\em Interactive Learning}. In: Rasa Core Documentation. Disponível em: {\url{https://core.rasa.com/tutorial_interactive_learning.html}}. Acesso em: 20 jul.2018.
+		
+		\bibitem{teste4}{\em Rasa Core without Python}. In: Rasa Core Documentation. Disponível em: {\url{https://core.rasa.com/tutorial_remote.html}}. Acesso em: 20 jul.2018.
+		
+		\bibitem{teste5}{\em Anaconda. The Most Popular Python Data Science Platform}. Disponível em: {\url{https://www.anaconda.com/what-is-anaconda/}}. Acesso em: 20 jul.2018.
+		
+		\bibitem{teste6}{\em PyPI - The Python Package Index}. Disponível em: {\url{https://pypi.org/}}. Acesso em: 20 jul.2018.
+		
+		\bibitem{teste7}{\em User Guide - pip Documentation}. Disponível em: {\url{https://pip.pypa.io/en/stable/user_guide/}}. Acesso em: 20 jul.2018.
+		
 	\end{thebibliography}
 	
 	
