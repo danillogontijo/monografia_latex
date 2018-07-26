@@ -247,7 +247,7 @@
 	\chapter{Linguística e Processamento de Linguagem Natural}
 	
 	
-	\indent\indent O ser humano é separado de outras espécies pela sua capacidade de linguagem (Russel e Norving, p. 990). Mesmo existindo alguns outros animais capazes de se comunicar, demonstrando alguns sinais de vocabulário, somente o ser humano pode se comunicar de forma confiável utilizando um número ilimitado de mensagens qualitativamente diferentes sobre qualquer tema utilizando sinais discretos.
+	\indent\indent O ser humano é separado de outras espécies pela sua capacidade de linguagem (Russell e Norvig, p. 990). Mesmo existindo alguns outros animais capazes de se comunicar, demonstrando alguns sinais de vocabulário, somente o ser humano pode se comunicar de forma confiável utilizando um número ilimitado de mensagens qualitativamente diferentes sobre qualquer tema utilizando sinais discretos.
 	
 	
 	
@@ -257,7 +257,7 @@
 	
 	\indent\indent Para Kracht (2007), linguagem é um meio de se comunicar, é um sistema semiótico, ou seja, simplesmente um conjunto de sinais. E para Rich e Knight (1994), a linguagem natural compreende a comunicação dos seres humanos sobre o mundo, ocorrendo em sua maior parte através da fala. Comparando com a linguagem escrita, esta última ainda é muito recente. Porém, a linguagem escrita é mais fácil de ser compreendida por um computador. Em outras palavras, requer menos processamento da máquina para ser interpretada.
 	
-	Para Russel e Norving (2013), uma linguagem pode ser definida como um conjunto de sequências, sendo que nesse meio, temos as Linguagens Formais e as Linguagens Naturais. A primeira tem modelos de linguagem precisamente definidos, citando como exemplo, as linguagens de programação \textit{Java}, \textit{Python}, e dentre outras. Esse tipo de linguagem é considerada uma linguagem definida, pois é especificada por um conjunto de regras chamado gramática, e também de regras que definem o seu significado ou sua a semântica. Por exemplo, as regras dizem que o $``$significado$"$  de $``$2 + 2$"$  é 4, e o significado de $``$1/0$"$  será sinalizado como erro.
+	Para Russell e Norvig (2013), uma linguagem pode ser definida como um conjunto de sequências, sendo que nesse meio, temos as Linguagens Formais e as Linguagens Naturais. A primeira tem modelos de linguagem precisamente definidos, citando como exemplo, as linguagens de programação \textit{Java}, \textit{Python}, e dentre outras. Esse tipo de linguagem é considerada uma linguagem definida, pois é especificada por um conjunto de regras chamado gramática, e também de regras que definem o seu significado ou sua a semântica. Por exemplo, as regras dizem que o $``$significado$"$  de $``$2 + 2$"$  é 4, e o significado de $``$1/0$"$  será sinalizado como erro.
 	
 	Já a Linguagem Natural não pode ser caracterizada como um conjunto de sentenças definitivas. Mencionando algumas linguagens, por exemplo, o português, o inglês, etc., é melhor tratá-las como uma distribuição de probabilidade sobre sentenças do que por um conjunto definitivo. Ou seja, em vez de perguntar se uma sequência de palavras é ou não válida dentro do conjunto de regras que o define, perguntamos por sua probabilidade a qual uma sentença aleatória seria palavras ? P(S = palavras). A Linguagem Natural também pode ser ambígua. $``$Ele encontrou o banco$"$ , pode significar tanto que ele encontrou uma peça de mobília, como também uma instituição financeira. Portanto, não podemos falar de um único significado para a sentença, mas de uma distribuição de probabilidade sobre possíveis significados. 
 	
@@ -277,7 +277,7 @@
 	Segundo Oliveira (2002), uma palavra em uma sentença gramaticalmente válida pode ser substituída por uma outra de mesmo tipo, mantendo assim a validade da sentença. Assim um verbo seria substituído por outro verbo, um substantivo substituído por outro e assim por diante. A morfologia trata as palavras de acordo com sua classificação, flexão, forma e estrutura. 
 	
 	\subsection{Análise Sintática}
-	\indent\indent Recordando\ que gramática é um conjunto de regras definidos em uma sentença,  análise sintática é o processo de analisar uma cadeia de palavras para descobrir a sua estrutura frasal, de acordo com as regras de uma gramática (Russel e Norving, 2013, p. 1028).
+	\indent\indent Recordando\ que gramática é um conjunto de regras definidos em uma sentença,  análise sintática é o processo de analisar uma cadeia de palavras para descobrir a sua estrutura frasal, de acordo com as regras de uma gramática (Russell e Norvig, 2013, p. 1028).
 	
 	O analisador sintático trabalha ao nível de agrupamento de palavras, definindo a estrutura de uma frase, diferente do analisador léxico-morfológico que lida com as estruturas e classificação das palavras.
 	
@@ -455,7 +455,7 @@
 	
 	Mencionado sobre linguagem de programação, e como o \textit{Rasa} utiliza sua abstração de suas funções em \textit{Python}, essa linguagem foi também uma das características a ser analisada para a escolha deste \textit{framework. }Vejamos a seguir.
 	\section{Linguagem de programação \textit{Python}}
-	\indent\indent Como\ citado, anteriormente em Linguagem Natural, segundo Russel e Norving, temos dois tipos de linguagens:  Linguagens Formais e as Linguagens Naturais. Dentro de um modelo de linguagem precisamente definido, temos então, o \textit{Python}.
+	\indent\indent Como\ citado, anteriormente em Linguagem Natural, segundo Russell e Norvig, temos dois tipos de linguagens:  Linguagens Formais e as Linguagens Naturais. Dentro de um modelo de linguagem precisamente definido, temos então, o \textit{Python}.
 	
 	Bem, de maneira geral, a definição que \textit{Python} é um tipo de Linguagem Formal ainda é uma definição muito ampla. Vamos então, partir da seguinte pergunta: para que serve uma linguagem de programação? Para responder isso, faremos uma simples pesquisa no Wikipedia para descobrir o que é programação de computador. E encontramos que a programação de computadores é: 
 	
@@ -562,7 +562,7 @@
 	\subsection{Rasa NLU}
 	\indent\indent Segundo a documentação, Rasa NLU é uma ferramenta de código aberto para classificação de intenção e extração de entidade\cite{oba11}. E partindo da conclusão anterior, de que NLU procura entender a linguagem, permitindo que os computadores leiam e compreendam o texto, nos dá por base a função do Rasa NLU. 
 	
-	A intenção, mencionada na definição do Rasa NLU, é basicamente a compreensão do texto. E entidades são os nomes do mundo real, as quais falamos nas características do spaCy, os nomes de pessoas, países, produtos, etc. E por aí, já temos a ideia de onde a biblioteca spaCy será usada. Faltando, apenas dizer, como será usada. Mas vou deixar essa parte para o tópico que mencionaremos a implementação completa do \textit{chatterbot}.
+	A intenção, mencionada na definição do Rasa NLU, é basicamente a compreensão do texto. E entidades são os nomes do mundo real, as quais falamos nas características do spaCy, os nomes de pessoas, países, produtos, etc. E por aí, já temos a ideia de onde a biblioteca spaCy será usada. Faltando, apenas dizer, como será usada. Essa parte será estudo no tópico de implementação do \textit{chatterbot}.
 	
 	\subsection{Rasa Core}
 	\indent\indent Com\ o Rasa NLU vamos extrair as intenções das sentenças de entrada - por exemplo, se a pessoa que está conversando com o assistente virtual, está querendo saber sobre um item específico do cardápio ou se ele está apenas cumprimentando -  e também, as entidades. Mas só isso, não é suficiente para funcionar um \textit{chatterbot}. Precisamos de algo que trate e controle o fluxo da conversa, respondendo e interagindo diante dessas sentenças de entrada. Quando alguém cumprimentar o \textit{chatterbot}, que ele responda de volta um cumprimento ou boas-vindas, e se for perguntado sobre um item do cardápio, que retorne também uma resposta que esteja de acordo. É para isso então, que temos o Rasa Core. Mas não é somente isso que a ferramenta faz, temos outras funcionalidade que citaremos a seguir.
@@ -1078,20 +1078,20 @@
 	from rasa_nlu import config
 	
 	def train (data, config_file, model_dir):
-	training_data = load_data(data)
-	configuration = config.load(config_file)
-	trainer = Trainer(configuration)
-	trainer.train(training_data)
-	model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
+		training_data = load_data(data)
+		configuration = config.load(config_file)
+		trainer = Trainer(configuration)
+		trainer.train(training_data)
+		model_directory = trainer.persist(model_dir, fixed_model_name = 'chat')
 	
 	def run():
-	interpreter = Interpreter.load('./models/nlu/default/chat')
-	print(interpreter.parse('Pode me enviar o seu cardápio?'))
-	print(interpreter.parse('Me mostra o menu?'))
+		interpreter = Interpreter.load('./models/nlu/default/chat')
+		print(interpreter.parse('Pode me enviar o seu cardápio?'))
+		print(interpreter.parse('Me mostra o menu?'))
 	
 	if __name__ == '__main__':
-	train('./data/training_data.json', './config/config.yml', './models/nlu')
-	run()
+		train('./data/training_data.json', './config/config.yml', './models/nlu')
+		run()
 	
 	\end{lstlisting}
 	
@@ -1245,6 +1245,8 @@
 		
 		\bibitem{turing}A. M. TURING. {\em I.A. COMPUTING MACHINERY AND INTELLIGENCE}, Mind, Volume LIX, Issue 236, 01 Outubro 1950, p.433-460, {\url{https://doi.org/10.1093/mind/LIX.236.433}}
 		
+		\bibitem{norvig}RUSSEL, S.; NORVIG, P.; {\em Artificial Inteligence: A Modern Approach.}, Prentice Hall Press, Third Edition, 2009.
+						
 		\bibitem{ganascia}GANASCIA, Jean-Gabriel. {\em Inteligência artificial}. São Paulo: Editora Ática, 1997.
 		
 		\bibitem{Deryugina}Deryugina, O.V. {\em Sci. Tech.Inf}. Proc. (2010) 37: 143. Disponível em: {\url{https://doi.org/10.3103/S0147688210020097}}. Acesso em: 01 jul.2018.
